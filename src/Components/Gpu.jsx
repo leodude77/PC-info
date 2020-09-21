@@ -16,13 +16,10 @@ class Gpu extends Component {
             sunt molestias pariatur quo!
           </p>
         </div>
-        <div
-          className="col rounded-lg p-2"
-          style={{ backgroundColor: "#f5f5f5" }}
-        >
+        <div className="col ce p-2" style={{ backgroundColor: "#f5f5f5" }}>
           <a href="https://venturebeat.com/wp-content/uploads/2018/04/evga-gtx-1080-100663485-orig.png?fit=400%2C259&strip=all">
             <img
-              className="rounded"
+              className="ce"
               src="https://venturebeat.com/wp-content/uploads/2018/04/evga-gtx-1080-100663485-orig.png?fit=400%2C259&strip=all"
             />
           </a>

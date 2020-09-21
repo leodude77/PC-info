@@ -6,7 +6,7 @@ import Main from "./Components/Main";
 class App extends Component {
   render() {
     return (
-      <div className="App" style={{ backgroundColor: "#1d212f" }}>
+      <div className="App" style={{ backgroundColor: "#121212" }}>
         <BrowserRouter>
           <Main />
         </BrowserRouter>

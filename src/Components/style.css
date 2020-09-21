@@ -1,5 +1,5 @@
 .nav {
-  background-color: #2c3247;
+  background-color: #1e2125;
 }
 
 .Cpu {
@@ -9,4 +9,35 @@
 
 .navd {
   color: #030624;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.full-height {
+  min-height: 100vmin;
+}
+
+.bgcolor {
+  background-color: #121212;
+}
+
+.hr {
+  border-top: 1px solid white;
+  margin: 3rem;
+}
+
+.ce {
+  border-radius: 1rem;
+}
+
+.nav-link:hover {
+  color: #0cc3ac;
 }

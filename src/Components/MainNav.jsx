@@ -24,10 +24,12 @@ const MainNav = (props) => {
   return (
     <div>
       <Navbar dark expand="md" className="nav">
-        <NavbarBrand href="/">
-          <img src={logo} className="App-logo" alt="logo" />
-          PC Info
-        </NavbarBrand>
+        <NavLink to="/">
+          <NavbarBrand>
+            <img src={logo} className="App-logo" alt="logo" />
+            PC Info
+          </NavbarBrand>
+        </NavLink>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -61,7 +63,10 @@ const MainNav = (props) => {
             <NavItem>
               <a
                 className="nav-link"
-                href="https://github.com/reactstrap/reactstrap"
+                // style={{ cursor: "pointer" }}
+                // onClick={() =>
+                //   window.open("https://github.com/leodude77/PC-info", "_blank")
+                // }
               >
                 GitHub
               </a>
