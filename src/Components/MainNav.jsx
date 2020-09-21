@@ -61,6 +61,11 @@ const MainNav = (props) => {
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
+              <NavLink className="nav-link" to="/build" exact>
+                Build a PC
+              </NavLink>
+            </NavItem>
+            <NavItem>
               <a
                 className="nav-link"
                 // style={{ cursor: "pointer" }}
@@ -70,11 +75,6 @@ const MainNav = (props) => {
               >
                 GitHub
               </a>
-            </NavItem>
-            <NavItem>
-              <NavLink className="nav-link" to="/" exact>
-                FAQ
-              </NavLink>
             </NavItem>
           </Nav>
           <NavbarText>Poggy Site</NavbarText>

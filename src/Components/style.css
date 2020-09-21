@@ -38,6 +38,24 @@
   border-radius: 1rem;
 }
 
-.nav-link:hover {
-  color: #0cc3ac;
+.cardsize img {
+  max-block-size: 13rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.table {
+  margin: auto;
+}
+
+.nv {
+  background-image: url(https://i.imgur.com/Psv3JXA.jpg);
+}
+
+.amdcpu {
+  background-image: url(https://i.imgur.com/Ng1znsJ.jpg);
+  background-position: center;
 }

@@ -4,7 +4,9 @@ import { Switch, Route, withRouter, Redirect } from "react-router-dom";
 import Cpu from "./Cpu";
 import Gpu from "./Gpu";
 import cpu from "../Components/Assets/Cpu";
+import gpu from "../Components/Assets/gpu";
 import home from "../Components/home";
+import build from "../Components/build";
 
 class Main extends Component {
   state = {};
@@ -15,9 +17,9 @@ class Main extends Component {
         <MainNav />
         <Switch>
           <Route path="/cpu" component={() => <Cpu cpu={cpu} />} />
-          <Route path="/gpu" component={Gpu} />
+          <Route path="/gpu" component={() => <Gpu gpu={gpu} />} />
           <Route path="/home" component={home} />
-          <Redirect to="/home" />
+          <Route path="/build" component={build} />
         </Switch>
       </React.Fragment>
     );
