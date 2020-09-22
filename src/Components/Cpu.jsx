@@ -2,53 +2,71 @@ import React, { Component } from "react";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import cpu from "../Components/Assets/Cpu";
+import { Tab, Nav } from "react-bootstrap";
 
 class Cpu extends Component {
-  render() {
+  displayCpu(key) {
     const cpus = cpu.map((cpu) => {
-      return (
-        <div className="mt-4">
-          <h1 style={{ margin: "50px" }}>
-            <b>{cpu.name}</b>
-          </h1>
-          <div
-            className="row ce p-2 m-3 cardsize amdcpu"
-            style={{ cursor: "pointer" }}
-            onClick={() => window.open(cpu.link, "_blank")}
-          >
-            <div className="col-lg-7">
-              <img className="ce " src={cpu.img} style={{ maxWidth: "100%" }} />
-            </div>
+      if (cpu.brand === key) {
+        return (
+          <div className="mt-4">
+            <h1 style={{ margin: "50px" }}>
+              <b>{cpu.name}</b>
+            </h1>
+            <div
+              className={
+                "row ce p-2 m-3 align-items-center cardsize " + key + "cpu"
+              }
+              style={{ cursor: "pointer" }}
+              onClick={() => window.open(cpu.link, "_blank")}
+            >
+              <div className="col-lg-7">
+                <img
+                  className="ce "
+                  src={cpu.img}
+                  style={{ maxWidth: "100%" }}
+                />
+              </div>
 
-            <div className="col-12 col-lg-5 mt-4">
-              <table className="table table-striped" style={{ color: "white" }}>
-                <tr>
-                  <td>Number of Cores</td>
-                  <td>{cpu.cores}</td>
-                </tr>
-                <tr>
-                  <td>Number of Threads</td>
-                  <td>{cpu.threads}</td>
-                </tr>
-                <tr>
-                  <td>Boost Clock Speed</td>
-                  <td>{cpu.boostc}</td>
-                </tr>
-                <tr>
-                  <td>Base Clock Speed</td>
-                  <td>{cpu.basec}</td>
-                </tr>
-                <tr>
-                  <td>TDP</td>
-                  <td>{cpu.tdp}</td>
-                </tr>
-              </table>
+              <div className="col-12 col-lg-5 mt-4">
+                <table
+                  className="table table-striped"
+                  style={{ color: "white" }}
+                >
+                  <tr>
+                    <td>Number of Cores</td>
+                    <td>{cpu.cores}</td>
+                  </tr>
+                  <tr>
+                    <td>Number of Threads</td>
+                    <td>{cpu.threads}</td>
+                  </tr>
+                  <tr>
+                    <td>Boost Clock Speed</td>
+                    <td>{cpu.boostc}</td>
+                  </tr>
+                  <tr>
+                    <td>Base Clock Speed</td>
+                    <td>{cpu.basec}</td>
+                  </tr>
+                  <tr>
+                    <td>TDP</td>
+                    <td>{cpu.tdp}</td>
+                  </tr>
+                </table>
+              </div>
             </div>
+            <hr className="hr" />
           </div>
-          <hr className="hr" />
-        </div>
-      );
+        );
+      }
     });
+    return cpus;
+  }
+
+  render() {
+    const amdcpus = this.displayCpu("amd");
+    const icpus = this.displayCpu("intel");
 
     return (
       <div className="Cpu container mt-2">
@@ -84,15 +102,22 @@ class Cpu extends Component {
           </div>
         </div>
         <hr className="hr" />
-        <nav class="nav nav-pills flex-column flex-sm-row">
-          <a class="flex-sm-fill text-sm-center nav-link active" href="#">
-            AMD RYZEN
-          </a>
-          <a class="flex-sm-fill text-sm-center nav-link" href="#">
-            INTEL
-          </a>
-        </nav>
-        {cpus}
+        <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+          <Nav variant="pills">
+            <Nav.Item className="col-sm-6 m-0 p-0">
+              <Nav.Link eventKey="first">AMD RYZEN</Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item className="col-sm-6 m-0 p-0">
+              <Nav.Link eventKey="second">INTEL</Nav.Link>
+            </Nav.Item>
+          </Nav>
+
+          <Tab.Content>
+            <Tab.Pane eventKey="first">{amdcpus}</Tab.Pane>
+            <Tab.Pane eventKey="second">{icpus}</Tab.Pane>
+          </Tab.Content>
+        </Tab.Container>
       </div>
     );
   }

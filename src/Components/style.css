@@ -11,16 +11,6 @@
   color: #030624;
 }
 
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-}
-
 .full-height {
   min-height: 100vmin;
 }
@@ -40,11 +30,11 @@
 
 .cardsize img {
   max-block-size: 13rem;
-  display: block;
+  /* display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 2em;
-  margin-bottom: 2em;
+  margin-bottom: 2em; */
 }
 
 .table {
@@ -53,9 +43,20 @@
 
 .nv {
   background-image: url(https://i.imgur.com/Psv3JXA.jpg);
+  background-position: center;
+}
+
+.radeon {
+  background-image: url(https://i.imgur.com/6UPcHpZ.jpg);
+  background-position: center;
 }
 
 .amdcpu {
   background-image: url(https://i.imgur.com/Ng1znsJ.jpg);
+  background-position: center;
+}
+
+.intelcpu {
+  background-image: url(https://i.imgur.com/YpsH7rG.jpg);
   background-position: center;
 }

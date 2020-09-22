@@ -1,53 +1,112 @@
 import React, { Component } from "react";
 import "./style.css";
 import gpucards from "./Assets/gpu";
+import { Nav, Tab } from "react-bootstrap";
 
 class Gpu extends Component {
   render() {
-    const gpus = gpucards.map((gpu) => {
-      return (
-        <div className="mt-4">
-          <h1 style={{ margin: "50px" }}>
-            <b>{gpu.name}</b>
-          </h1>
-          <div
-            className="row ce p-2 m-3 cardsize nv"
-            style={{ cursor: "pointer" }}
-            onClick={() => window.open(gpu.link, "_blank")}
-          >
-            <div className="col-lg-7">
-              <img className="ce " src={gpu.img} style={{ maxWidth: "100%" }} />
-            </div>
+    //var for Nvidia cards
+    const nvcard = gpucards.map((gpu) => {
+      if (gpu.brand === "nvidia")
+        return (
+          <div className="mt-4">
+            <h1 style={{ margin: "50px" }}>
+              <b>{gpu.name}</b>
+            </h1>
+            <div
+              className="row ce p-2 m-3 cardsize nv"
+              style={{ cursor: "pointer" }}
+              onClick={() => window.open(gpu.link, "_blank")}
+            >
+              <div className="col-lg-7">
+                <img
+                  className="ce "
+                  src={gpu.img}
+                  style={{ maxWidth: "100%" }}
+                />
+              </div>
 
-            <div className="col-12 col-lg-5 mt-4">
-              <table className="table " style={{ color: "white" }}>
-                <tr>
-                  <td>NVIDIA CUDA Cores</td>
-                  <td>{gpu.cores}</td>
-                </tr>
-                <tr>
-                  <td>Boost Clock</td>
-                  <td>{gpu.clock}</td>
-                </tr>
-                <tr>
-                  <td>Memory Size</td>
-                  <td>{gpu.msize}</td>
-                </tr>
-                <tr>
-                  <td>Memory Type</td>
-                  <td>{gpu.mtype}</td>
-                </tr>
-                <tr>
-                  <td>Price</td>
-                  <td>{gpu.price}</td>
-                </tr>
-              </table>
+              <div className="col-12 col-lg-5 mt-4">
+                <table className="table " style={{ color: "white" }}>
+                  <tr>
+                    <td>NVIDIA CUDA Cores</td>
+                    <td>{gpu.cores}</td>
+                  </tr>
+                  <tr>
+                    <td>Boost Clock</td>
+                    <td>{gpu.clock}</td>
+                  </tr>
+                  <tr>
+                    <td>Memory Size</td>
+                    <td>{gpu.msize}</td>
+                  </tr>
+                  <tr>
+                    <td>Memory Type</td>
+                    <td>{gpu.mtype}</td>
+                  </tr>
+                  <tr>
+                    <td>Price</td>
+                    <td>{gpu.price}</td>
+                  </tr>
+                </table>
+              </div>
             </div>
+            <hr className="hr" />
           </div>
-          <hr className="hr" />
-        </div>
-      );
+        );
     });
+
+    //var for AMD cards
+    const amdcard = gpucards.map((gpu) => {
+      if (gpu.brand === "amd")
+        return (
+          <div className="mt-4">
+            <h1 style={{ margin: "50px" }}>
+              <b>{gpu.name}</b>
+            </h1>
+            <div
+              className="row ce p-2 m-3 cardsize radeon"
+              style={{ cursor: "pointer" }}
+              onClick={() => window.open(gpu.link, "_blank")}
+            >
+              <div className="col-lg-7">
+                <img
+                  className="ce "
+                  src={gpu.img}
+                  style={{ maxWidth: "100%" }}
+                />
+              </div>
+
+              <div className="col-12 col-lg-5 mt-4">
+                <table className="table " style={{ color: "white" }}>
+                  <tr>
+                    <td>Stream Processors</td>
+                    <td>{gpu.cores}</td>
+                  </tr>
+                  <tr>
+                    <td>Boost Clock</td>
+                    <td>{gpu.clock}</td>
+                  </tr>
+                  <tr>
+                    <td>Memory Size</td>
+                    <td>{gpu.msize}</td>
+                  </tr>
+                  <tr>
+                    <td>Memory Type</td>
+                    <td>{gpu.mtype}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>{gpu.price}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <hr className="hr" />
+          </div>
+        );
+    });
+
     return (
       <div className="Cpu container mt-2">
         <div className="p-4">
@@ -71,15 +130,22 @@ class Gpu extends Component {
           </a>
         </div>
         <hr className="hr" />
-        <nav class="nav nav-pills flex-column flex-sm-row">
-          <a class="flex-sm-fill text-sm-center nav-link active" href="#">
-            NVIDIA
-          </a>
-          <a class="flex-sm-fill text-sm-center nav-link" href="#">
-            AMD RADEON
-          </a>
-        </nav>
-        {gpus}
+        <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+          <Nav variant="pills">
+            <Nav.Item className="col-sm-6 m-0 p-0">
+              <Nav.Link eventKey="first">NVIDIA</Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item className="col-sm-6 m-0 p-0">
+              <Nav.Link eventKey="second">AMD RADEON</Nav.Link>
+            </Nav.Item>
+          </Nav>
+
+          <Tab.Content>
+            <Tab.Pane eventKey="first">{nvcard}</Tab.Pane>
+            <Tab.Pane eventKey="second">{amdcard}</Tab.Pane>
+          </Tab.Content>
+        </Tab.Container>
       </div>
     );
   }
