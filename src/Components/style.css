@@ -19,11 +19,6 @@
   background-color: #121212;
 }
 
-.hr {
-  border-top: 1px solid white;
-  margin: 3rem;
-}
-
 .ce {
   border-radius: 1rem;
 }
@@ -59,4 +54,16 @@
 .intelcpu {
   background-image: url(https://i.imgur.com/YpsH7rG.jpg);
   background-position: center;
+}
+
+.head {
+  font-family: "Trebuchet MS", "Lucida Grande", sans-serif;
+  font-size: 4rem;
+  padding: 30px;
+  color: floralwhite;
+}
+
+.horizontal-rule {
+  border-top: 1px solid #666666;
+  margin-top: 3rem;
 }

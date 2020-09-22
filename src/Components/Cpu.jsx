@@ -14,9 +14,7 @@ class Cpu extends Component {
               <b>{cpu.name}</b>
             </h1>
             <div
-              className={
-                "row ce p-2 m-3 align-items-center cardsize " + key + "cpu"
-              }
+              className={"row ce  align-items-center cardsize " + key + "cpu"}
               style={{ cursor: "pointer" }}
               onClick={() => window.open(cpu.link, "_blank")}
             >
@@ -25,14 +23,12 @@ class Cpu extends Component {
                   className="ce "
                   src={cpu.img}
                   style={{ maxWidth: "100%" }}
+                  alt="Cpu"
                 />
               </div>
 
               <div className="col-12 col-lg-5 mt-4">
-                <table
-                  className="table table-striped"
-                  style={{ color: "white" }}
-                >
+                <table className="table " style={{ color: "white" }}>
                   <tr>
                     <td>Number of Cores</td>
                     <td>{cpu.cores}</td>
@@ -56,10 +52,10 @@ class Cpu extends Component {
                 </table>
               </div>
             </div>
-            <hr className="hr" />
+            <div className="horizontal-rule"></div>
           </div>
         );
-      }
+      } else return <div></div>;
     });
     return cpus;
   }
@@ -71,9 +67,10 @@ class Cpu extends Component {
     return (
       <div className="Cpu container mt-2">
         <div className="p-4">
-          <h1>
+          <h1 className="head">
             <b>CPU</b>
           </h1>
+          <h2>Graphical Processing Unit</h2>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             Exercitationem unde, omnis autem, sunt laboriosam odio eveniet
@@ -84,7 +81,7 @@ class Cpu extends Component {
 
         <div className="col-12 ce" style={{ backgroundColor: "#f5f5f5" }}>
           <div className="col-12 col-sm-10 offset-sm-1 ce p-2">
-            <a
+            <div
               style={{ cursor: "pointer" }}
               onClick={() =>
                 window.open(
@@ -97,11 +94,16 @@ class Cpu extends Component {
                 className="ce"
                 style={{ maxWidth: "100%" }}
                 src="https://www.amd.com/system/files/2020-06/ryzen-chip-copper-circuit-board-1260x709.jpg"
+                alt="cpu-ryzen"
               />
-            </a>
+            </div>
           </div>
         </div>
-        <hr className="hr" />
+        <div className="horizontal-rule"></div>
+        <h1 className="head">
+          <b>Latest Generation of CPUS</b>
+        </h1>
+
         <Tab.Container id="left-tabs-example" defaultActiveKey="first">
           <Nav variant="pills">
             <Nav.Item className="col-sm-6 m-0 p-0">

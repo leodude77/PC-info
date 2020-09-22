@@ -20,6 +20,7 @@ class Main extends Component {
           <Route path="/gpu" component={() => <Gpu gpu={gpu} />} />
           <Route path="/home" component={home} />
           <Route path="/build" component={build} />
+          <Redirect to="/home" />
         </Switch>
       </React.Fragment>
     );

@@ -52,8 +52,8 @@ const gpu = [
   },
   {
     name: "AMD Radeon RX 5700",
-    cores: "2560",
-    clock: "1980 Mhz",
+    cores: "2304",
+    clock: "1725 Mhz",
     msize: "8 GB",
     mtype: "GDDR6",
     img:

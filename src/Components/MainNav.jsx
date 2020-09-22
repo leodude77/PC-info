@@ -14,7 +14,7 @@ import {
 } from "reactstrap";
 import logo from "./fan.png";
 import "./style.css";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const MainNav = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,15 +66,15 @@ const MainNav = (props) => {
               </NavLink>
             </NavItem>
             <NavItem>
-              <a
+              <div
                 className="nav-link"
-                // style={{ cursor: "pointer" }}
-                // onClick={() =>
-                //   window.open("https://github.com/leodude77/PC-info", "_blank")
-                // }
+                style={{ cursor: "pointer" }}
+                onClick={() =>
+                  window.open("https://github.com/leodude77/PC-info", "_blank")
+                }
               >
                 GitHub
-              </a>
+              </div>
             </NavItem>
           </Nav>
           <NavbarText>Poggy Site</NavbarText>

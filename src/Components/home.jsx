@@ -5,8 +5,8 @@ class Home extends Component {
   render() {
     return (
       <div className="container full-height p-4" style={{ color: "white" }}>
-        <h1>About this website</h1>
-        <hr className="hr" />
+        <h1 className="head">About this website</h1>
+        <div className="horizontal-rule"></div>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
           blanditiis doloribus repellendus hic cumque, maiores eligendi
