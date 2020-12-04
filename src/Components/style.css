@@ -31,9 +31,8 @@
   margin-top: 2em;
   margin-bottom: 2em; */
 }
-
 .table {
-  margin: auto;
+  margin-top: 40px;
 }
 
 .nv {
@@ -61,6 +60,7 @@
   font-size: 4rem;
   padding: 30px;
   color: floralwhite;
+  max-width: 100%;
 }
 
 .horizontal-rule {

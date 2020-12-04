@@ -7,11 +7,11 @@ import cpu from "../Components/Assets/Cpu";
 import gpu from "../Components/Assets/gpu";
 import home from "../Components/home";
 import build from "../Components/build";
+import mb from "../Components/mb";
 
 class Main extends Component {
   state = {};
   render() {
-    console.log(cpu);
     return (
       <React.Fragment>
         <MainNav />
@@ -20,6 +20,7 @@ class Main extends Component {
           <Route path="/gpu" component={() => <Gpu gpu={gpu} />} />
           <Route path="/home" component={home} />
           <Route path="/build" component={build} />
+          <Route path="/mb" component={mb} />
           <Redirect to="/home" />
         </Switch>
       </React.Fragment>

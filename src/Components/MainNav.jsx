@@ -56,8 +56,33 @@ const MainNav = (props) => {
                     GPU
                   </NavLink>
                 </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Reset</DropdownItem>
+                <DropdownItem>
+                  <NavLink
+                    style={{ color: "#020521" }}
+                    className="nav-link"
+                    to="/mb"
+                  >
+                    Motherboard
+                  </NavLink>
+                </DropdownItem>
+                <DropdownItem>
+                  <NavLink
+                    style={{ color: "#020521" }}
+                    className="nav-link"
+                    to="/gpu"
+                  >
+                    RAM
+                  </NavLink>
+                </DropdownItem>
+                <DropdownItem>
+                  <NavLink
+                    style={{ color: "#020521" }}
+                    className="nav-link"
+                    to="/gpu"
+                  >
+                    Storage
+                  </NavLink>
+                </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
