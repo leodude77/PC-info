@@ -10,6 +10,7 @@ const cpu = [
       "https://www.amd.com/system/files/styles/992px/private/2019-11/312735--ryzen-3950x-pib-left-facing-wof-1260x709.png?itok=_f8vNQf9",
     link: "https://www.amd.com/en/products/cpu/amd-ryzen-9-3950x",
     brand: "amd",
+    price: "65000",
   },
   {
     name: "AMD Ryzen 9 3900x",
@@ -22,6 +23,7 @@ const cpu = [
       "https://www.amd.com/system/files/styles/992px/private/2019-11/312735--ryzen-3950x-pib-left-facing-wof-1260x709.png?itok=_f8vNQf9",
     link: "https://www.amd.com/en/products/cpu/amd-ryzen-9-3900x",
     brand: "amd",
+    price: "40000",
   },
   {
     name: "AMD Ryzen 7 3800x",
@@ -34,6 +36,7 @@ const cpu = [
       "https://www.amd.com/system/files/styles/992px/private/2019-06/238593-ryzen-7-pib-left-facing-1260x709.png?itok=ACRb3hX0",
     link: "https://www.amd.com/en/products/cpu/amd-ryzen-7-3800x",
     brand: "amd",
+    price: "32000",
   },
   {
     name: "AMD Ryzen 7 3700x",
@@ -46,6 +49,7 @@ const cpu = [
       "https://www.amd.com/system/files/styles/992px/private/2019-06/238593-ryzen-7-pib-left-facing-1260x709.png?itok=ACRb3hX0",
     link: "https://www.amd.com/en/products/cpu/amd-ryzen-7-3700x",
     brand: "amd",
+    price: "30000",
   },
   {
     name: "AMD Ryzen 5 3600",
@@ -58,6 +62,7 @@ const cpu = [
       "https://www.amd.com/system/files/styles/992px/private/2019-06/238593-ryzen-5-pib-left-facing-1260x709.png?itok=umdtyaSy",
     link: "https://www.amd.com/en/products/cpu/amd-ryzen-5-3600",
     brand: "amd",
+    price: "17000",
   },
   {
     name: "Intel i9-10900k",
@@ -71,6 +76,7 @@ const cpu = [
     link:
       "https://www.intel.in/content/www/in/en/products/processors/core/i9-processors/i9-10900k.html",
     brand: "intel",
+    price: "45000",
   },
   {
     name: "Intel i7-10700k",
@@ -84,6 +90,7 @@ const cpu = [
     link:
       "https://www.intel.com/content/www/us/en/products/processors/core/i7-processors/i7-10700k.html",
     brand: "intel",
+    price: "33000",
   },
   {
     name: "Intel i5-10600k",
@@ -97,6 +104,7 @@ const cpu = [
     link:
       "https://www.intel.com/content/www/us/en/products/processors/core/i5-processors/i5-10600k.html",
     brand: "intel",
+    price: "24000",
   },
   {
     name: "Intel i3-10320",
@@ -110,6 +118,7 @@ const cpu = [
     link:
       "https://www.intel.com/content/www/us/en/products/processors/core/i3-processors/i3-10320.html",
     brand: "intel",
+    price: "11000",
   },
 ];
 

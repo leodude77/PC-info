@@ -9,16 +9,13 @@ class Mb extends Component {
         className="container p-4 full-height"
         style={{ color: "white", padding: "auto" }}
       >
-        <div className="p-4">
+        <div >
           <b>
-            <h1 className="head">Motherboard</h1>
+            <h1 className="head"><b>Motherboard</b>  </h1>
           </b>
-          <h2>Graphical Processing Unit</h2>
+          <img src="https://rog.asus.com/websites/global/products/tjg9re6szyiauhqv/img/kv/pd.png" alt="" style={{maxWidth: "60vmin"}}/>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Exercitationem unde, omnis autem, sunt laboriosam odio eveniet
-            voluptatem, qui in consectetur quos hic. Nemo atque sint consectetur
-            sunt molestias pariatur quo!
+          A motherboard (also called mainboard, main circuit board, system board, baseboard, planar board, logic board,[1] or mobo) is the main printed circuit board (PCB) in general-purpose computers and other expandable systems. It holds and allows communication between many of the crucial electronic components of a system, such as the central processing unit (CPU) and memory, and provides connectors for other peripherals.
           </p>
         </div>
         <div className="horizontal-rule"></div>
@@ -50,7 +47,7 @@ class Mb extends Component {
                       <th scope="col" width="14%">
                         <b>
                           <a
-                            rel="nofollow"
+                            rel="nofollow noopener noreferrer"
                             class="external text"
                             href="https://www.amd.com/en/chipsets/a520"
                             target="_blank"
@@ -328,7 +325,7 @@ class Mb extends Component {
                       <th scope="col" width="14%">
                         <b>
                           <a
-                            rel="nofollow"
+                            rel="nofollow noopener noreferrer"
                             class="external text"
                             href="https://ark.intel.com/content/www/us/en/ark/products/201841/intel-b460-chipset.html"
                             target="_blank"

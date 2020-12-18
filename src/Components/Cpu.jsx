@@ -27,7 +27,7 @@ class Cpu extends Component {
                 />
               </div>
 
-              <div className="col-12 col-lg-5 mt-4">
+              <div className="col-12 col-lg-5">
                 <table className="table " style={{ color: "white" }}>
                   <tr>
                     <td>Number of Cores</td>
@@ -49,6 +49,10 @@ class Cpu extends Component {
                     <td>TDP</td>
                     <td>{cpu.tdp}</td>
                   </tr>
+                  <tr>
+                    <td>Price</td>
+                    <td>Rs {cpu.price}</td>
+                  </tr>
                 </table>
               </div>
             </div>
@@ -66,16 +70,13 @@ class Cpu extends Component {
 
     return (
       <div className="Cpu container mt-2">
-        <div className="p-4">
+        <div >
           <h1 className="head">
             <b>CPU</b>
           </h1>
-          <h2>Graphical Processing Unit</h2>
+          <h2>Central Processing Unit</h2>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Exercitationem unde, omnis autem, sunt laboriosam odio eveniet
-            voluptatem, qui in consectetur quos hic. Nemo atque sint consectetur
-            sunt molestias pariatur quo!
+          A central processing unit (CPU), also called a central processor, main processor or just processor, is the electronic circuitry within a computer that executes instructions that make up a computer program. The CPU performs basic arithmetic, logic, controlling, and input/output (I/O) operations specified by the instructions in the program.
           </p>
         </div>
 

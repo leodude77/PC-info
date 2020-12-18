@@ -14,7 +14,7 @@ class Gpu extends Component {
               <b>{gpu.name}</b>
             </h1>
             <div
-              className="row ce p-2 m-3 cardsize nv"
+              className="row ce p-2 m-3 cardsize nv align-items-center"
               style={{ cursor: "pointer" }}
               onClick={() => window.open(gpu.link, "_blank")}
             >
@@ -27,7 +27,7 @@ class Gpu extends Component {
                 />
               </div>
 
-              <div className="col-12 col-lg-5 mt-4">
+              <div className="col-12 col-lg-5">
                 <table className="table " style={{ color: "white" }}>
                   <tr>
                     <td>NVIDIA CUDA Cores</td>
@@ -38,12 +38,20 @@ class Gpu extends Component {
                     <td>{gpu.clock}</td>
                   </tr>
                   <tr>
+                    <td>Base Clock</td>
+                    <td>{gpu.bclock}</td>
+                  </tr>
+                  <tr>
                     <td>Memory Size</td>
                     <td>{gpu.msize}</td>
                   </tr>
                   <tr>
                     <td>Memory Type</td>
                     <td>{gpu.mtype}</td>
+                  </tr>
+                  <tr>
+                    <td>Power Draw</td>
+                    <td>{gpu.watt}</td>
                   </tr>
                   <tr>
                     <td>Price</td>
@@ -67,7 +75,7 @@ class Gpu extends Component {
               <b>{gpu.name}</b>
             </h1>
             <div
-              className="row ce p-2 m-3 cardsize radeon"
+              className="row ce p-2 m-3 cardsize radeon align-items-center"
               style={{ cursor: "pointer" }}
               onClick={() => window.open(gpu.link, "_blank")}
             >
@@ -80,7 +88,7 @@ class Gpu extends Component {
                 />
               </div>
 
-              <div className="col-12 col-lg-5 mt-4">
+              <div className="col-12 col-lg-5">
                 <table className="table " style={{ color: "white" }}>
                   <tr>
                     <td>Stream Processors</td>
@@ -91,6 +99,10 @@ class Gpu extends Component {
                     <td>{gpu.clock}</td>
                   </tr>
                   <tr>
+                    <td>Boost Clock</td>
+                    <td>{gpu.bclock}</td>
+                  </tr>
+                  <tr>
                     <td>Memory Size</td>
                     <td>{gpu.msize}</td>
                   </tr>
@@ -99,8 +111,12 @@ class Gpu extends Component {
                     <td>{gpu.mtype}</td>
                   </tr>
                   <tr>
-                    <td></td>
-                    <td>{gpu.price}</td>
+                    <td>Power Draw</td>
+                    <td>{gpu.watt}</td>
+                  </tr>
+                  <tr>
+                    <td>Price</td>
+                    <td>Rs {gpu.price}</td>
                   </tr>
                 </table>
               </div>
@@ -113,16 +129,13 @@ class Gpu extends Component {
 
     return (
       <div className="Cpu container mt-2">
-        <div className="p-4">
+        <div >
           <h1 className="head">
             <b>GPU</b>
           </h1>
           <h2>Graphical Processing Unit</h2>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Exercitationem unde, omnis autem, sunt laboriosam odio eveniet
-            voluptatem, qui in consectetur quos hic. Nemo atque sint consectetur
-            sunt molestias pariatur quo!
+          A graphics processing unit (GPU) is a specialized, electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display device. 
           </p>
         </div>
         <div className="col ce p-2" style={{ backgroundColor: "#f5f5f5" }}>

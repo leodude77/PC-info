@@ -58,7 +58,7 @@
 .head {
   font-family: "Trebuchet MS", "Lucida Grande", sans-serif;
   font-size: 4rem;
-  padding: 30px;
+  padding: 20px;
   color: floralwhite;
   max-width: 100%;
 }
@@ -66,4 +66,53 @@
 .horizontal-rule {
   border-top: 1px solid #666666;
   margin-top: 3rem;
+}
+
+.block {
+  position: relative;
+  background: black;
+}
+
+.glow::before,
+.glow::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(
+    45deg,
+    yellow,
+    red,
+    purple,
+    blue,
+    cyan,
+    green,
+    lime
+  );
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+  z-index: 1;
+  animation: animate 20s linear infinite;
+  background-size: 200%;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.glow::after {
+  filter: blur(20px);
+}
+
+.buildFont {
+  font-family: Helvetica, sans-serif;
+  color: #dbdbdb;
 }

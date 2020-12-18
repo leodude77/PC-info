@@ -69,7 +69,7 @@ const MainNav = (props) => {
                   <NavLink
                     style={{ color: "#020521" }}
                     className="nav-link"
-                    to="/gpu"
+                    to="/ram"
                   >
                     RAM
                   </NavLink>
@@ -78,7 +78,7 @@ const MainNav = (props) => {
                   <NavLink
                     style={{ color: "#020521" }}
                     className="nav-link"
-                    to="/gpu"
+                    to="/storage"
                   >
                     Storage
                   </NavLink>
@@ -102,7 +102,7 @@ const MainNav = (props) => {
               </div>
             </NavItem>
           </Nav>
-          <NavbarText>Poggy Site</NavbarText>
+          <NavbarText>Early Alpha Build</NavbarText>
         </Collapse>
       </Navbar>
     </div>

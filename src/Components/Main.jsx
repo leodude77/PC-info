@@ -5,6 +5,8 @@ import Cpu from "./Cpu";
 import Gpu from "./Gpu";
 import cpu from "../Components/Assets/Cpu";
 import gpu from "../Components/Assets/gpu";
+import ram from "./ram";
+import storage from "./storage"
 import home from "../Components/home";
 import build from "../Components/build";
 import mb from "../Components/mb";
@@ -21,6 +23,8 @@ class Main extends Component {
           <Route path="/home" component={home} />
           <Route path="/build" component={build} />
           <Route path="/mb" component={mb} />
+          <Route path="/ram" component={ram} />
+          <Route path="/storage" component={storage} />
           <Redirect to="/home" />
         </Switch>
       </React.Fragment>
