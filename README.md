@@ -19,3 +19,4 @@ Bugs -
 <br>
 -> Mb and ram info broken on phone.
 <br>
+-> Motherboard select in build component has spacing issues.
