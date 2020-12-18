@@ -3,6 +3,8 @@
 ### Version Alpha v.0 :
 
 <br>
+ https://leodude77.github.io/PC-info/
+<br>
 Bugs -
 <br>
 -> Whitespace at bottom of ram page
