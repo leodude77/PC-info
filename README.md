@@ -1,7 +1,8 @@
-##Personal Pepega Project. (Spagetti code)
+#Personal Pepega Project. (Spagetti code)
 
-####Version Alpha v.0 :
+###Version Alpha v.0 :
 Bugs -
+
 -> Whitespace at bottom of ram page
 -> Not proper real time price calc and display
 -> AMD motherboard details not updated
