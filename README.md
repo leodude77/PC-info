@@ -1,4 +1,4 @@
-Personal Pepega Project.
+Personal Pepega Project. (Spagetti code)
 
 Version Alpha v.0 : 
 Bugs - 
