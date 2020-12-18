@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/PC-info/static/css/main.4e12de2b.chunk.css",
+    "main.js": "/PC-info/static/js/main.f70668ef.chunk.js",
+    "main.js.map": "/PC-info/static/js/main.f70668ef.chunk.js.map",
+    "runtime-main.js": "/PC-info/static/js/runtime-main.682ef8b7.js",
+    "runtime-main.js.map": "/PC-info/static/js/runtime-main.682ef8b7.js.map",
+    "static/css/2.d9ad5f5c.chunk.css": "/PC-info/static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.38180ac4.chunk.js": "/PC-info/static/js/2.38180ac4.chunk.js",
+    "static/js/2.38180ac4.chunk.js.map": "/PC-info/static/js/2.38180ac4.chunk.js.map",
+    "index.html": "/PC-info/index.html",
+    "precache-manifest.2aa2dc7e8d33c2b9f44ce9dc2d81a928.js": "/PC-info/precache-manifest.2aa2dc7e8d33c2b9f44ce9dc2d81a928.js",
+    "service-worker.js": "/PC-info/service-worker.js",
+    "static/css/2.d9ad5f5c.chunk.css.map": "/PC-info/static/css/2.d9ad5f5c.chunk.css.map",
+    "static/css/main.4e12de2b.chunk.css.map": "/PC-info/static/css/main.4e12de2b.chunk.css.map",
+    "static/js/2.38180ac4.chunk.js.LICENSE.txt": "/PC-info/static/js/2.38180ac4.chunk.js.LICENSE.txt",
+    "static/media/fan.png": "/PC-info/static/media/fan.03eb9289.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.682ef8b7.js",
+    "static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.38180ac4.chunk.js",
+    "static/css/main.4e12de2b.chunk.css",
+    "static/js/main.f70668ef.chunk.js"
+  ]
+}
