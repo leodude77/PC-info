@@ -20,7 +20,6 @@ Bugs -\
 -> Motherboard and ram component tables still broken on phone\
 -> Verify chipset has issues if cpu is already selected and then changed\
 -> Selected index remains same after cpu change\
-\
 
 ### Version Alpha v.0 :
 
