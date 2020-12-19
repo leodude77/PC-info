@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import cpu from "../Components/Assets/Cpu";
 import { Tab, Nav } from "react-bootstrap";
 
 class Cpu extends Component {
   displayCpu(key) {
-    const cpus = cpu.map((cpu) => {
+    const cpus = this.props.cpu.map((cpu) => {
       if (cpu.brand === key) {
         return (
           <div className="mt-4">

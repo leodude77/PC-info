@@ -15,7 +15,7 @@ class Mb extends Component {
           </b>
           <img src="https://rog.asus.com/websites/global/products/tjg9re6szyiauhqv/img/kv/pd.png" alt="" style={{maxWidth: "60vmin"}}/>
           <p>
-          A motherboard (also called mainboard, main circuit board, system board, baseboard, planar board, logic board,[1] or mobo) is the main printed circuit board (PCB) in general-purpose computers and other expandable systems. It holds and allows communication between many of the crucial electronic components of a system, such as the central processing unit (CPU) and memory, and provides connectors for other peripherals.
+          A motherboard (also called mainboard, main circuit board, system board, baseboard, planar board, logic board, or mobo) is the main printed circuit board (PCB) in general-purpose computers and other expandable systems. It holds and allows communication between many of the crucial electronic components of a system, such as the central processing unit (CPU) and memory, and provides connectors for other peripherals.
           </p>
         </div>
         <div className="horizontal-rule"></div>
@@ -140,158 +140,45 @@ class Mb extends Component {
                       <td colspan="3">4</td>
                     </tr>
                     <tr>
-                      <th>Maximum USB 2.0 ports</th>
+                      <th>USB: 3.2 Gen 2, 3.2 Gen 1, 2.0</th>
 
-                      <td>12</td>
-                      <td colspan="2">14</td>
-                    </tr>
-                    <tr>
-                      <th>USB 3.2 ports configuration</th>
-
-                      <td>Up to 8 Gen 1x1 (5Gb/s)</td>
-                      <td>
-                        Up to 4 Gen 2x1 (10Gb/s) <br /> Up to 8 Gen 1x1 (5Gb/s)
-                      </td>
-                      <td colspan="1">
-                        Up to 6 Gen 2x1 (10Gb/s) <br /> Up to 10 Gen 1x1 (5Gb/s)
-                      </td>
+                      <td>1, 2, 6</td>
+                      <td >2, 2, 6</td>
+                      <td>8, 0, 4</td>
                     </tr>
                     <tr>
                       <th>
-                        Maximum{" "}
                         <a href="/wiki/SATA" class="mw-redirect" title="SATA">
                           SATA
-                        </a>{" "}
-                        3.0 ports
-                      </th>
-
-                      <td colspan="3">6</td>
+                        </a> Ports
+                       </th>
+                      <td>4</td>
+                      <td>6</td>
+                      <td>12</td>
                     </tr>
                     <tr>
                       <th>
-                        Processor{" "}
-                        <a
-                          href="/wiki/PCI_Express#PCI_Express_3.0"
-                          title="PCI Express"
-                        >
-                          PCI Express
-                        </a>{" "}
-                        v3.0 configuration
+                        PCIe Lanes
                       </th>
-                      <td colspan="2">1 x 16</td>
-                      <td colspan="1">1x16 or 2x8 or 1x8+2x4</td>
+                      <td>PCIe 3.0 x 6</td>
+                      <td>PCIe 3.0 x 10</td>
+                      <td>PCIe 4.0 x 16</td>
                     </tr>
                     <tr>
-                      <th>
-                        <a
-                          href="/wiki/Platform_Controller_Hub"
-                          title="Platform Controller Hub"
-                        >
-                          PCH
-                        </a>{" "}
-                        PCI Express configuration
-                      </th>
-
-                      <td>16</td>
-                      <td>20</td>
-                      <td colspan="1">24</td>
+                      <th><a href="https://en.wikipedia.org/wiki/AMD_CrossFireX">Crossfire</a> Support</th>
+                      <td colspan="2" style={{ background: "#c74242"}}>No</td>
+                      <td style={{ background: "#2fd0a5"}}>Yes</td>
                     </tr>
                     <tr>
-                      <th>Independent Display Support (digital ports/pipes)</th>
-
-                      <td colspan="3">3</td>
+                      <th><a href="https://en.wikipedia.org/wiki/Scalable_Link_Interface">SLI</a></th>
+                      <td style={{ background: "#c74242"}}>No</td>
+                      <td colspan="2" style={{ background: "#2fd0a5"}}>Yes</td>
                     </tr>
                     <tr>
-                      <th>
-                        Integrated Wireless (
-                        <a href="/wiki/IEEE_802.11ax" title="IEEE 802.11ax">
-                          802.11ax
-                        </a>
-                        )
-                      </th>
-                      <td
-                        colspan="1"
-                        style={{ background: "#c74242", textAlign: "center" }}
-                        class="table-no"
-                      >
-                        No
-                      </td>
-                      <td
-                        colspan="2"
-                        style={{ background: "#2fd0a5", textAlign: "center" }}
-                        class="table-yes"
-                      >
-                        Intel® Wi-Fi 6 AX201*
-                      </td>
+                      <th><a href="https://en.wikipedia.org/wiki/RAID">RAID</a></th>
+                      <td colspan="3">0, 1 ,10</td>
                     </tr>
-                    <tr>
-                      <th>
-                        SATA{" "}
-                        <a href="/wiki/RAID" title="RAID">
-                          RAID
-                        </a>{" "}
-                        0/1/5/10 support
-                      </th>
-
-                      <td
-                        colspan="3"
-                        rowspan="3"
-                        style={{ background: "#2fd0a5", textAlign: "center" }}
-                        class="table-yes"
-                      >
-                        Yes
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        <a href="/wiki/3D_XPoint" title="3D XPoint">
-                          Intel Optane Memory
-                        </a>{" "}
-                        Support
-                      </th>
-                    </tr>
-                    <tr>
-                      <th>
-                        <a
-                          rel="nofollow"
-                          class="external text"
-                          href="https://www.intel.com/content/www/us/en/architecture-and-technology/smart-sound-technology.html"
-                        >
-                          Intel Smart Sound
-                        </a>{" "}
-                        Technology
-                      </th>
-                    </tr>
-                    <tr>
-                      <th>
-                        Intel{" "}
-                        <a
-                          href="/wiki/Intel_Active_Management_Technology"
-                          title="Intel Active Management Technology"
-                        >
-                          Active Management
-                        </a>
-                        ,{" "}
-                        <a
-                          href="/wiki/Trusted_Execution_Technology"
-                          title="Trusted Execution Technology"
-                        >
-                          Trusted Execution
-                        </a>{" "}
-                        and{" "}
-                        <a href="/wiki/Intel_vPro" title="Intel vPro">
-                          vPro
-                        </a>{" "}
-                        Technology
-                      </th>
-                      <td
-                        colspan="3"
-                        style={{ background: "#c74242", textAlign: "center" }}
-                        class="table-no"
-                      >
-                        No
-                      </td>
-                    </tr>
+                    
                     <tr>
                       <th>
                         Chipset{" "}
@@ -302,11 +189,14 @@ class Mb extends Component {
                           TDP
                         </a>
                       </th>
-                      <td colspan="3">6W</td>
+                      <td colspan="2">5W</td>
+                      <td>15W</td>
                     </tr>
                     <tr>
                       <th>Release date</th>
-                      <td colspan="3">Q2 2020</td>
+                      <td>August 2020</td>
+                      <td>June 2020</td>
+                      <td>July 2019</td>
                     </tr>
                   </tbody>
                 </table>

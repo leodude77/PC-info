@@ -72,7 +72,7 @@ const cpu = [
     basec: "3.70 Ghz",
     tdp: "125 W",
     img:
-      "https://images-na.ssl-images-amazon.com/images/I/61aMmen0cFL._SX679_.jpg",
+      "https://www.intel.com/content/dam/www/public/us/en/images/product/product-boxes/i9-9900k-box-shot-rwd.png.rendition.intel.web.336.252.png",
     link:
       "https://www.intel.in/content/www/in/en/products/processors/core/i9-processors/i9-10900k.html",
     brand: "intel",
@@ -86,7 +86,7 @@ const cpu = [
     basec: "3.80 Ghz",
     tdp: "125 W",
     img:
-      "https://images-na.ssl-images-amazon.com/images/I/71P3chRzgNL._SX679_.jpg",
+      "https://redtech.lk/file/2020/09/Intel%C2%AE-Core%E2%84%A2-i7-10700K-Processor-16M-Cache-up-to-4.80-GHz.png",
     link:
       "https://www.intel.com/content/www/us/en/products/processors/core/i7-processors/i7-10700k.html",
     brand: "intel",
@@ -100,7 +100,7 @@ const cpu = [
     basec: "4.10 Ghz",
     tdp: "125 W",
     img:
-      "https://images-na.ssl-images-amazon.com/images/I/71mRBrDf7rL._SX679_.jpg",
+      "https://redtech.lk/file/2020/09/Intel%C2%AE-Core%E2%84%A2-i5-10600K-Processor-12M-Cache-up-to-4.80-GHz.png",
     link:
       "https://www.intel.com/content/www/us/en/products/processors/core/i5-processors/i5-10600k.html",
     brand: "intel",
@@ -114,7 +114,7 @@ const cpu = [
     basec: "3.80 Ghz",
     tdp: "65 W",
     img:
-      "https://images-na.ssl-images-amazon.com/images/I/71a9zyDTnmL._SX679_.jpg",
+      "https://redtech.lk/file/2020/09/Intel%C2%AE-Core%E2%84%A2-i3-10100-Processor-6M-Cache-up-to-4.30-GHz.png",
     link:
       "https://www.intel.com/content/www/us/en/products/processors/core/i3-processors/i3-10320.html",
     brand: "intel",

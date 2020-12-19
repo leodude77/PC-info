@@ -57,7 +57,7 @@
 
 .head {
   font-family: "Trebuchet MS", "Lucida Grande", sans-serif;
-  font-size: 4rem;
+  font-size: 5vmax;
   padding: 20px;
   color: floralwhite;
   max-width: 100%;
@@ -115,4 +115,13 @@
 .buildFont {
   font-family: Helvetica, sans-serif;
   color: #dbdbdb;
+}
+
+.box {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: #1e2125;
+  z-index: 1;
+  border-radius: 5px;
 }

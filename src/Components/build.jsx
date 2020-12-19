@@ -1,234 +1,284 @@
 import React, { Component } from "react";
-import CPUS from "./Assets/Cpu";
-import GPUS from "./Assets/gpu"
-import MB from "./Assets/mb"
-import PSU from "./Assets/psu"
 import "./style.css";
 
-class build extends Component {
+class Build extends Component {
   constructor(props){
     super(props);
     this.state ={
       wattage : 0,
+      cpuName: '',
       cpuImg : '',
-      gpuImg : '',
+      cpuWattage : '000 W',
+      chipset : 'both',
+      mb : '',
       mbImg: '',
+      gpuName : '',
+      gpuImg : '',
+      gpuWattage : '000 W',
       psuImg: '',
+      psuType : 0,
       ramImg: '',
       price : 0,
-      gpu_cpu_Price: 0,
+      cpuPrice: 0,
       mbPrice : 0,
+      gpuPrice : 0,
       ramPrice : 0,
       stoPrice : 0,
-      psuPrice : 0
+      psuPrice : 0,
+      ramAmount : "1",
+      ramSize : 0,
+      stoType : "hdd",
+      stoAmount : 0,
     }
   }
   
   //calculate total wattage
   calWatt = () => {
-    var cpu = document.getElementById("cpuSel");
-    var gpu = document.getElementById("gpuSel");
-    var cpuImg,gpuImg;
-    var price=0;
-    var wattage=0;
-    for(var i=0; i<GPUS.length; i++){
-      if(gpu.options[gpu.selectedIndex].text === GPUS[i].name){
-        wattage = parseInt(GPUS[i].watt);
-        gpuImg = GPUS[i].img;
-        price = parseInt(GPUS[i].price);
-      }
-    }
-    for(var index =0 ; index <CPUS.length ; index++){
-      if(cpu.options[cpu.selectedIndex].text === CPUS[index].name){
-         wattage += parseInt(CPUS[index].tdp);
-         cpuImg = CPUS[index].img;
-         price += parseInt(CPUS[index].price);
-      }
-    }
-    console.log(price)
-    console.log(wattage)
-    wattage += 300;
-    wattage = wattage - (wattage%50);
+    var total_watts = parseInt(this.state.cpuWattage.substring(0,3)) + parseInt(this.state.gpuWattage.substring(0,3))
+    total_watts += 300;
+    total_watts = total_watts - (total_watts % 50)
     this.setState({
-      wattage : wattage,
-      cpuImg : cpuImg,
-      gpuImg : gpuImg,
-      gpu_cpu_Price: price
-    })
-    this.dispMb();
-    this.totalPrice();
+      wattage : total_watts
+    }, () => {this.totalPrice()})
   }
 
   //display Motherboard
   dispMb = () => {
-    var mb = document.getElementById("mbSel");
-    for(var i=0; i<MB.length; i++){
-      if(mb.options[mb.selectedIndex].text === MB[i].name){
-        this.setState({
-          mbImg : MB[i].img,
-          mbPrice : parseInt(MB[i].price)
-        })
+    for(var i=0; i<this.props.MB.length; i++){
+      if(this.state.mb === this.props.MB[i].name){
         break;
       }
     }
+    this.setState({
+      mbImg : this.props.MB[i].img,
+      mbPrice : this.props.MB[i].price
+    }, () => {this.totalPrice();})
+  }
+  
+  //display cpu
+  dispCpu = () => {
+    for(var i=0; i<this.props.CPUS.length; i++){
+      if(this.props.CPUS[i].name === this.state.cpuName)
+        break;
+    }
+    this.setState({
+      cpuImg : this.props.CPUS[i].img,
+      cpuPrice : this.props.CPUS[i].price,
+      cpuWattage : this.props.CPUS[i].tdp
+    }, () => {this.calWatt();})
+  }
+  
+  //display gpu
+  dispGpu = () => {
+    for(var i=0; i<this.props.GPUS.length;i++){
+      if(this.state.gpuName === this.props.GPUS[i].name){
+        break;
+      }
+    }
+    this.setState({
+      gpuImg : this.props.GPUS[i].img,
+      gpuPrice : this.props.GPUS[i].price,
+      gpuWattage : this.props.GPUS[i].watt
+    }, () => {this.calWatt();})
   }
 
   //display power supply
   dispPsu = () => {
-    var psu = document.getElementById("psuSel");
-    for(var i=0; i<PSU.length; i++){
-      if(psu.options[psu.selectedIndex].text === PSU[i].name){
-        this.setState({
-          psuImg : PSU[i].img,
-          psuPrice : parseInt(PSU[i].price)
-        })
+    for(var i=0; i<this.props.PSU.length; i++){
+      if(this.state.psuType === this.props.PSU[i].name){
         break;
       }
     }
+    this.setState({
+      psuImg : this.props.PSU[i].img,
+      psuPrice : this.props.PSU[i].price
+    }, () => {this.totalPrice();} )
   }
 
-  //ram calc
-  calRam = (ram) =>{
-    var ramsticks = document.getElementById("ramSel");
-    var price = (3000 * ramsticks.value * ram)/8;
+  //calculate ram price
+  calRam = () =>{
+    
     this.setState({
-      ramPrice : price,
+      ramPrice : (3000 * parseInt(this.state.ramAmount) * this.state.ramSize)/8,
       ramImg : "https://i.imgur.com/xruEaR4.png"
-    })
-    this.totalPrice()
+    }, () => {this.totalPrice()})
   }
   
-  //storage calc
-  calStorage = (storage) => {
-    var stoAmount = document.getElementById("stoSel")
+  //calculate storage price
+  calStorage = () => {
     var price,img;
-    if(storage === "ssd"){
-       price = stoAmount.value * 5000;
+    if(this.state.stoType === "sata"){
+       price = parseInt(this.state.stoAmount) * 5000;
        img = "https://i.imgur.com/IKzkznf.png";
     }
-    else if(storage === "hdd"){
-      price = stoAmount.value * 2500;
+    else if(this.state.stoType === "hdd"){
+      price = parseInt(this.state.stoAmount) * 2500;
       img = "https://i.imgur.com/o0igXIi.png";
     }
     else {
-      price = stoAmount.value * 10000;
+      price = parseInt(this.state.stoAmount) * 10000;
       img = "https://i.imgur.com/2Q14Aiy.png"
     }
     this.setState({
       stoPrice : price,
       stoImg : img
-    })
+    },() => {this.totalPrice();})
   }
 
   //Calculate Price of build
   totalPrice = () => {
     this.setState({
-      price : parseInt(this.state.psuPrice + this.state.gpu_cpu_Price + this.state.mbPrice + this.state.ramPrice + this.state.stoPrice)
+      price : (parseInt(this.state.psuPrice) + parseInt(this.state.gpuPrice) + parseInt(this.state.mbPrice) + 
+      parseInt(this.state.ramPrice) + parseInt(this.state.stoPrice) + parseInt(this.state.cpuPrice))
     })
     console.log(this.state)
   }
 
+  resetMbIndex = (e) => {
 
-  //to check compatible chipset
-  mbVerify = () => {
-    var cpu  = document.getElementById("cpuSel");
-    var mb = document.getElementById("mbSel");
-    while (mb.options.length > 0) {                
-      mb.remove(0);
-    }
-    if(cpu.value === "amd"){
-      mb.options[mb.options.length] = new Option('X570', 'amd');
-      mb.options[mb.options.length] = new Option('B550', 'amd');
-      mb.options[mb.options.length] = new Option('A520', 'amd');
-    }
-    else{
-      mb.options[mb.options.length] = new Option('Z490', 'intel');
-      mb.options[mb.options.length] = new Option('H470', 'intel');
-      mb.options[mb.options.length] = new Option('B460', 'intel');
-    }
-    this.calWatt();
+  }
+
+  //onChange handlers for each pc component
+  onChangeCpu = (e) => {
+    var chip;
+    if(e.target.value.substring(0,3) === "AMD")
+      chip = "amd";
+    else
+      chip = "intel"
+    this.setState({
+      [e.target.name] : e.target.value,
+      chipset : chip,
+      mb : '',
+      mbImg : ''
+    }, () => {this.dispCpu();})
+  }
+
+  onChangeMb = (e) => {
+    this.setState({
+      [e.target.name] : e.target.value
+    }, () => {this.dispMb();})
+  }
+
+  onChangeGpu = (e) => {
+    this.setState({
+      [e.target.name] : e.target.value 
+    }, () => {this.dispGpu();})
+  }
+  
+  
+  onChangeRam = (e) => {
+    this.setState({
+     [e.target.name] : (e.target.value)
+    }, () => {this.calRam();})
+  }
+
+  onChangeStorage = (e) => {
+    this.setState({
+      [e.target.name] : e.target.value
+    }, ()=> {this.calStorage();})
+  }
+
+  onChangePsu = (e) => {
+    this.setState({
+      [e.target.name] : e.target.value
+    }, ()=> {this.dispPsu();})
   }
   
   render() {
+    //display mb options based on cpu selected
+    const lookup = {
+      "both" : [{ id: 'X570', text: 'X570' },
+      { id: 'B550', text: 'B550' },
+      { id: 'A520', text: 'A520' },
+      { id: 'Z490', text: 'Z490' },
+      { id: 'H470', text: 'H470' },
+      { id: 'B460', text: 'B460' },
+      ],
+      "amd" : [{ id: 'X570', text: 'X570' },
+      { id: 'B550', text: 'B550' },
+      { id: 'A520', text: 'A520' },
+      ],
+      "intel" : [{ id: 'Z490', text: 'Z490' },
+      { id: 'H470', text: 'H470' },
+      { id: 'B460', text: 'B460' },]
+    }
+
     return (
       <div className="container full-height" >
         <div>
-          <h1 className="head">Build your pc</h1>
-          <div className="horizontal-rule"></div>
-          <div className="col-4 offset-8"><p className="buildFont" style={{fontSize: "2vmin"}}>Recommended Wattage : <strong>{this.state.wattage} W </strong></p></div>
+          <h1 className="head">Build your PC</h1>
+          <div className="box">
+            <p className="buildFont" style={{fontSize: "2vmax"}}>Recommended Wattage : <strong>{this.state.wattage} W </strong></p>
+            <p className="buildFont" style={{fontSize: "2vmax"}}>Price total : Rs <strong>{this.state.price}</strong></p>
+          </div>
           <div>
             <form>
               
               {/* CPU */}
-              <div className="align-items-center row">
-                <div className="col-sm-3">
+              <div className="align-items-center row pt-4">
+                <div className="col-md-3">
                   <label className="buildFont">CPU</label>
-                  <select className="custom-select" name="cpuSel" id="cpuSel" onChange={this.mbVerify} onClick={this.totalPrice} defaultValue="">
+                  <select className="custom-select" name="cpuName" onChange={this.onChangeCpu} defaultValue="">
                     <option hidden value="">Select CPU</option>
-                    <option value="amd">AMD Ryzen 9 3950x</option>
-                    <option value="amd">AMD Ryzen 9 3900x</option>
-                    <option value="amd">AMD Ryzen 7 3800x</option>
-                    <option value="amd">AMD Ryzen 7 3700x</option>
-                    <option value="amd">AMD Ryzen 5 3600</option>
-                    <option value="intel">Intel i9-10900k</option>
-                    <option value="intel">Intel i7-10700k</option>
-                    <option value="intel">Intel i5-10600k</option>
-                    <option value="intel">Intel i3-10320</option>
+                    <option value="AMD Ryzen 9 3950x">AMD Ryzen 9 3950x</option>
+                    <option value="AMD Ryzen 9 3900x">AMD Ryzen 9 3900x</option>
+                    <option value="AMD Ryzen 7 3800x">AMD Ryzen 7 3800x</option>
+                    <option value="AMD Ryzen 7 3700x">AMD Ryzen 7 3700x</option>
+                    <option value="AMD Ryzen 5 3600">AMD Ryzen 5 3600</option>
+                    <option value="Intel i9-10900k">Intel i9-10900k</option>
+                    <option value="Intel i7-10700k">Intel i7-10700k</option>
+                    <option value="Intel i5-10600k">Intel i5-10600k</option>
+                    <option value="Intel i3-10320">Intel i3-10320</option>
                   </select> 
                 </div> 
-                <div className="col-md-9" style={{height: "10vmax", overflow: "hidden"}}>
-                  <img src={this.state.cpuImg} alt="" style={{maxWidth:  "20vmax"}}/>
+                <div className="col-md-9">
+                  <img src={this.state.cpuImg} alt="" style={{maxWidth:  "50%"}}/>
                 </div>
               </div>
               <div className="horizontal-rule"></div>
               
               {/* Motherboard */}
-              <div className="align-items-center row" >
-                <div className="col-sm-3">
+              <div className="align-items-center row pt-4">
+                <div className="col-md-3">
                   <label className="buildFont">Motherboard</label>
-                  <select className="custom-select" name="mbSel" id="mbSel" onClick={()=> {this.dispMb(); this.totalPrice()}}>
+                  <select className="custom-select" name="mb" onChange= {this.onChangeMb}>
                     <option hidden value="">Select Motherboard</option>
-                    <option value="amd">X570</option>
-                    <option value="amd">B550</option>
-                    <option value="amd">A520</option>
-                    <option value="intel">Z490</option>
-                    <option value="intel">H470</option>
-                    <option value="intel">B460</option>
+                    {lookup[this.state.chipset].map( m => <option value={m.id}>{m.text}</option>)}
                   </select> 
                 </div>
-                <div className="col-md-9" style={{size: "10vmax", overflow: "hidden"}}>
-                  <img src={this.state.mbImg} alt="" style={{maxWidth:  "20vmax"}}/>
+                <div className="col-md-9" style={{overflow: "hidden"}}>
+                  <img src={this.state.mbImg} alt="" style={{maxWidth:  "100%"}}/>
                 </div>
               </div>
              <div className="horizontal-rule"></div>
 
              {/* GPU */}
-             <div className="row  align-items-center" style={{height: "20vmin"}}>
+             <div className="row  align-items-center pt-4">
                 <div className="col-md-3">
                   <label className="buildFont">GPU</label>
-                  <select className="custom-select" name="gpuSel" id="gpuSel" onClick={this.totalPrice} onChange={this.calWatt}>
+                  <select className="custom-select" name="gpuName" onChange={this.onChangeGpu}>
                     <option hidden value="">Select GPU</option>
-                    <option value="nvidia">NVIDIA RTX 3090</option>
-                    <option value="nvidia">NVIDIA RTX 3080</option>
-                    <option value="nvidia">NVIDIA RTX 3070</option>
-                    <option value="nvidia">NVIDIA RTX 3060 Ti</option>
-                    <option value="amd">AMD Radeon RX 6900XT</option>
-                    <option value="amd">AMD Radeon RX 6800XT</option>
-                    <option value="amd">AMD Radeon RX 6800</option>
-                    <option value="amd">AMD Radeon RX 5700XT</option>
+                    <option value="NVIDIA RTX 3090">NVIDIA RTX 3090</option>
+                    <option value="NVIDIA RTX 3080">NVIDIA RTX 3080</option>
+                    <option value="NVIDIA RTX 3070">NVIDIA RTX 3070</option>
+                    <option value="NVIDIA RTX 3060 Ti">NVIDIA RTX 3060 Ti</option>
+                    <option value="AMD Radeon RX 6900XT">AMD Radeon RX 6900XT</option>
+                    <option value="AMD Radeon RX 6800XT">AMD Radeon RX 6800XT</option>
+                    <option value="AMD Radeon RX 6800">AMD Radeon RX 6800</option>
+                    <option value="AMD Radeon RX 5700XT">AMD Radeon RX 5700XT</option>
                   </select> 
                 </div>
-                <div className="col-md-9" style={{height: "10vmax"}} >
-                  <img src={this.state.gpuImg} alt="" style={{maxWidth:  "20vmax"}}/>
+                <div className="col-md-9" >
+                  <img src={this.state.gpuImg} alt="" style={{maxWidth:"100%"}}/>
                 </div>
              </div>
              <div className="horizontal-rule"></div>
 
              {/* Ram */}
-              <div className="row align-items-center" style={{height: "20vmin"}}>
+              <div className="row align-items-center pt-4">
                 <div className="col-md-3 ">
                   <label className="buildFont">RAM</label>
-                  <select className="custom-select" name="ramSel" id="ramSel">
+                  <select className="custom-select" name="ramSize" id="ramSel" onChange={this.onChangeRam}>
                     <option hidden value="">Select RAM</option>
                     <option value="64">64 gb</option>
                     <option value="32">32 gb</option>
@@ -236,102 +286,103 @@ class build extends Component {
                     <option value="8">8 gb</option>
                   </select> 
                 </div> 
-                <div className="offset-1 col-md-3">
+                <div className="offset-md-1 col-md-3">
                   <label className="buildFont">Number of Sticks</label>
-                  <div className="row">
+                  <div className="row pl-4">
                     <div className="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="exampleRadios" id="1s" value="1" onClick = {() => {this.calRam(1);}}/>
-                      <label class="form-check-label buildFont" for="1s">
+                      <input class="form-check-input" type="radio" name="ramAmount" value="1" onChange = {this.onChangeRam} checked = {this.state.ramAmount === "1"} />
+                      <label class="form-check-label buildFont">
                           1
                       </label>
                     </div>
                     <div className="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="exampleRadios" id="2s" value="2"  onClick = {() => {this.calRam(2);}}/>
-                      <label class="form-check-label buildFont" for="2s">
+                      <input class="form-check-input" type="radio" name="ramAmount" value="2"  onChange = {this.onChangeRam} checked = {this.state.ramAmount === "2"} />
+                      <label class="form-check-label buildFont">
                           2
                       </label>
                     </div>
                     <div className="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="exampleRadios" id="3s" value="3"  onClick = {() => {this.calRam(3); }}/>
-                      <label class="form-check-label buildFont" for="3s">
+                      <input class="form-check-input" type="radio" name="ramAmount" value="3"  onChange = {this.onChangeRam} checked = {this.state.ramAmount === "3"} />
+                      <label class="form-check-label buildFont">
                           3
                       </label>
                     </div>
                     <div className="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="exampleRadios" id="4s" value="4"  onClick = {() => {this.calRam(4); }}/>
-                      <label class="form-check-label buildFont" for="4s">
+                      <input class="form-check-input" type="radio" name="ramAmount" value="4"  onChange = {this.onChangeRam} checked = {this.state.ramAmount === "4"}  />
+                      <label class="form-check-label buildFont">
                           4
                       </label>
                     </div>
                   </div>
                 </div>
-                <div>
-                  <img src={this.state.ramImg} alt="" style={{maxWidth: "30vmin"}}/>
+                <div className="col-md-3">
+                  <img src={this.state.ramImg} alt="" style={{maxWidth: "100%"}}/>
                 </div>
               </div>
               <div className="horizontal-rule"></div>
               
               {/* Storage */}
-              <div className="row align-items-center" style={{height: "20vmin"}}>
-                <div className="col-md-3 ">
+              <div className="row align-items-center pt-4">
+                <div className="col-md-3">
                   <label className="buildFont">Storage</label>
-                  <select className="custom-select" name="stoSel" id="stoSel">
+                  <select className="custom-select" name="stoAmount" onChange={this.onChangeStorage}>
                     <option hidden value="">Select Amount of Storage</option>
                     <option value="4">4 TB</option>
                     <option value="2">2 TB</option>
                     <option value="1">1 TB</option>
                   </select> 
                 </div> 
-                <div className="offset-1 col-md-3">
+                <div className="offset-md-1 col-md-4">
                   <label className="buildFont">Type of Storage</label>
-                  <div className="row">
+                  <div className="row pl-4">
                     <div className="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="exampleRadios1" id="hdd" value="hdd" onClick={() => {this.calStorage("hdd"); this.totalPrice()}} />
+                      <input class="form-check-input" type="radio" name="stoType" value="hdd" onChange = {this.onChangeStorage} checked = {this.state.stoType === "hdd"}/>
                       <label class="form-check-label buildFont" for="hdd">
                           HDD
                       </label>
                     </div>
                     <div className="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="exampleRadios1" id="hdd" value="sata"  onClick={() => {this.calStorage("ssd"); this.totalPrice()}}/>
+                      <input class="form-check-input" type="radio" name="stoType" value="sata" onChange = {this.onChangeStorage} checked = {this.state.stoType === "sata"}/>
                       <label class="form-check-label buildFont" for="sata">
                           SATA SSD
                       </label>
                     </div>
                     <div className="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="exampleRadios1" id="hdd" value="nvme"  onClick={() => {this.calStorage("nvme"); this.totalPrice()}}/>
+                      <input class="form-check-input" type="radio" name="stoType" value="nvme" onChange = {this.onChangeStorage} checked = {this.state.stoType === "nvme"}/>
                       <label class="form-check-label buildFont" for="nvme">
                           NVME SSD
                       </label>
                     </div>
                   </div>
                 </div>
-                <div className="offset-1">
-                  <img src={this.state.stoImg} alt="" style={{maxWidth: "20vmin"}}/>
+                <div className="col-md-3">
+                  <img src={this.state.stoImg} alt="" style={{maxWidth: "100%"}}/>
                 </div>
               </div> 
               <div className="horizontal-rule"></div>
               
               {/* Power Supply */}
-              <div className="row align-items-center" style={{height: "20vmin"}}>
+              <div className="row align-items-center pt-4">
                 <div className="col-md-3">
                   <label className="buildFont">Power Supply</label>
-                  <select className="custom-select" name="psuSel" id="psuSel" onChange= {this.dispPsu} onClick={this.totalPrice}>
+                  <select className="custom-select" name="psuType" onChange= {this.onChangePsu}>
                     <option hidden value="">Select Power Supply</option>
-                    <option value="1000">1200 W</option>
-                    <option value="750">750 W</option>
-                    <option value="600">600 W</option>
-                    <option value="450">450 W</option>
+                    <option value="1200 W">1200 W</option>
+                    <option value="750 W">750 W</option>
+                    <option value="600 W">600 W</option>
+                    <option value="450 W">450 W</option>
                   </select> 
                 </div>
-                <div className="col-md-9" style={{height: "10vmax"}} >
-                  <img src={this.state.psuImg} alt="" style={{maxWidth:  "23vmin"}}/>
+                <div className="col-md-9">
+                  <img src={this.state.psuImg} alt="" style={{maxWidth:  "100%"}}/>
                 </div> 
               </div> 
-              <div style={{padding: "20px"}} ></div>
 
-              {/* final price     */}
-              <div className= "buildFont " style={{padding: "40px", border: "1px solid white", borderRadius: "10px"}}>
-                <h1 >Final Price : {this.state.price}</h1>
+              <div style={{padding: "25px"}}></div>
+
+              {/* final price  */}
+              <div style={{padding: "20px", border: "1px solid #dbdbdb", borderRadius: "10px"}}>
+                <p style={{fontSize: "2vmax", color:"#dbdbdb", fontFamily:"consolas"}}><strong>Final Price : Rs {this.state.price}</strong></p>
               </div>
             </form>
           </div>
@@ -341,4 +392,4 @@ class build extends Component {
   }
 }
 
-export default build;
+export default Build;

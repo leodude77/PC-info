@@ -102,7 +102,7 @@ const MainNav = (props) => {
               </div>
             </NavItem>
           </Nav>
-          <NavbarText>Early Alpha Build</NavbarText>
+          <NavbarText>Alpha Build</NavbarText>
         </Collapse>
       </Navbar>
     </div>

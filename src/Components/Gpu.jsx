@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import "./style.css";
-import gpucards from "./Assets/gpu";
 import { Nav, Tab } from "react-bootstrap";
 
 class Gpu extends Component {
   render() {
     //var for Nvidia cards
-    const nvcard = gpucards.map((gpu) => {
+    const nvcard = this.props.gpu.map((gpu) => {
       if (gpu.brand === "nvidia")
         return (
           <div className="mt-4">
@@ -67,7 +66,7 @@ class Gpu extends Component {
     });
 
     //var for AMD cards
-    const amdcard = gpucards.map((gpu) => {
+    const amdcard = this.props.gpu.map((gpu) => {
       if (gpu.brand === "amd")
         return (
           <div className="mt-4">
@@ -99,7 +98,7 @@ class Gpu extends Component {
                     <td>{gpu.clock}</td>
                   </tr>
                   <tr>
-                    <td>Boost Clock</td>
+                    <td>Base Clock</td>
                     <td>{gpu.bclock}</td>
                   </tr>
                   <tr>
@@ -133,7 +132,7 @@ class Gpu extends Component {
           <h1 className="head">
             <b>GPU</b>
           </h1>
-          <h2>Graphical Processing Unit</h2>
+          <h3>Graphical Processing Unit</h3>
           <p>
           A graphics processing unit (GPU) is a specialized, electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display device. 
           </p>

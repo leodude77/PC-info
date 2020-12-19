@@ -4,12 +4,14 @@ class Home extends Component {
   state = {};
   render() {
     return (
-      <div className="container full-height p-4" style={{ color: "white" }}>
+      <div className="container p-4" style={{ color: "white", height:"100vh" }}>
         <h1 className="head">About this website</h1>
         <div className="horizontal-rule"></div>
-        <p>
-          Personal pepega project. Ty for coming.
-        </p>
+        <div className="buildFont pt-4">
+          <p>
+            Personal project. Help people learn about pc components and the ability to create your own build.
+          </p>
+        </div>
       </div>
     );
   }

@@ -62,7 +62,7 @@ class Storage extends Component {
                 <div style={{padding : "20px"}}></div>
                 <div class="row align-items-center" style = {{padding:"10px"}}>
                     <img src="https://i.imgur.com/o0igXIi.png" alt="pog" className="col-12 col-md-4"/>
-                    <p className="col-12 col-md-8">A hard disk drive (HDD), hard disk, hard drive, or fixed disk[b] is an electro-mechanical data storage device that stores and retrieves digital data using magnetic storage and one or more rigid rapidly rotating platters coated with magnetic material. The platters are paired with magnetic heads, usually arranged on a moving actuator arm, which read and write data to the platter surfaces. Data is accessed in a random-access manner, meaning that individual blocks of data can be stored and retrieved in any order. HDDs are a type of non-volatile storage, retaining stored data even when powered off.</p>
+                    <p className="col-12 col-md-8">A hard disk drive (HDD), hard disk, hard drive, or fixed disk is an electro-mechanical data storage device that stores and retrieves digital data using magnetic storage and one or more rigid rapidly rotating platters coated with magnetic material. The platters are paired with magnetic heads, usually arranged on a moving actuator arm, which read and write data to the platter surfaces. Data is accessed in a random-access manner, meaning that individual blocks of data can be stored and retrieved in any order. HDDs are a type of non-volatile storage, retaining stored data even when powered off.</p>
                 </div>
                 <div style={{padding : "20px"}}></div>
             </Tab.Pane>
