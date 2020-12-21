@@ -384,6 +384,8 @@ class Build extends Component {
               <div style={{padding: "20px", border: "1px solid #dbdbdb", borderRadius: "10px"}}>
                 <p style={{fontSize: "2vmax", color:"#dbdbdb", fontFamily:"consolas"}}><strong>Final Price : Rs {this.state.price}</strong></p>
               </div>
+
+              <div style={{padding: "20px"}}></div>
             </form>
           </div>
         </div>
