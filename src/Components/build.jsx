@@ -151,12 +151,11 @@ class Build extends Component {
 
   displayAllMbOptions = () => {
     for (var j = 0; j < this.props.MB.length; j++) {
-
       if (this.props.MB[j].name === this.state.mb)
         break;
     }
 
-    return (<select className="custom-select" name="mbOption" onChange={this.onChangeMbOptions}>
+    return (<select className="custom-select" name="mbOption" onChange={this.onChangeMbOptions} value={this.state.mbOption}>
       <option hidden value="">Select After market Motherboard</option>
       {this.props.MB[j].boards.map(m => { return (<option value={m.name}>{m.name}</option>) })}
     </select>);
@@ -168,7 +167,6 @@ class Build extends Component {
       price: (parseInt(this.state.psuPrice) + parseInt(this.state.gpuPrice) + parseInt(this.state.mbPrice) +
         parseInt(this.state.ramPrice) + parseInt(this.state.stoPrice) + parseInt(this.state.cpuPrice))
     })
-    console.log(this.state)
   }
 
   //onChange handlers for each pc component
@@ -183,13 +181,15 @@ class Build extends Component {
       chipset: chip,
       mb: '',
       mbImg: '',
-      mbPrice: ''
+      mbPrice: 0
     }, () => { this.dispCpu(); })
   }
 
   onChangeMb = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
+      mbImg: '',
+      mbPrice: 0
     })
   }
 
@@ -286,7 +286,7 @@ class Build extends Component {
               <div className="align-items-center row pt-4">
                 <div className="col-md-3">
                   <label className="buildFont">Motherboard</label>
-                  <select className="custom-select" name="mb" onChange={this.onChangeMb}>
+                  <select className="custom-select" name="mb" onChange={this.onChangeMb} value={this.state.mb}>
                     <option hidden value="">Select Motherboard</option>
                     {lookup[this.state.chipset].map(m => <option value={m.id}>{m.text}</option>)}
                   </select>
