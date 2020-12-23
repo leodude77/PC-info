@@ -133,7 +133,7 @@ class Gpu extends Component {
             <b>GPU</b>
           </h1>
           <h3>Graphical Processing Unit</h3>
-          <p>
+          <p className="para">
           A graphics processing unit (GPU) is a specialized, electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display device. 
           </p>
         </div>

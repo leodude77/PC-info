@@ -15,7 +15,7 @@ class Ram extends Component {
             <b>RAM</b>
           </h1>
           <h2>Random Access Memory</h2>
-          <p>
+          <p className="para">
           Random-access memory is a form of computer memory that can be read and changed in any order, typically used to store working data and machine code. A random-access memory device allows data items to be read or written in almost the same amount of time irrespective of the physical location of data inside the memory.
           </p>
         </div>

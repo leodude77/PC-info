@@ -74,7 +74,7 @@ class Cpu extends Component {
             <b>CPU</b>
           </h1>
           <h2>Central Processing Unit</h2>
-          <p>
+          <p className="para">
           A central processing unit (CPU), also called a central processor, main processor or just processor, is the electronic circuitry within a computer that executes instructions that make up a computer program. The CPU performs basic arithmetic, logic, controlling, and input/output (I/O) operations specified by the instructions in the program.
           </p>
         </div>

@@ -14,7 +14,7 @@ class Mb extends Component {
             <h1 className="head"><b>Motherboard</b>  </h1>
           </b>
           <img src="https://rog.asus.com/websites/global/products/tjg9re6szyiauhqv/img/kv/pd.png" alt="" style={{maxWidth: "60vmin"}}/>
-          <p>
+          <p className="para">
           A motherboard (also called mainboard, main circuit board, system board, baseboard, planar board, logic board, or mobo) is the main printed circuit board (PCB) in general-purpose computers and other expandable systems. It holds and allows communication between many of the crucial electronic components of a system, such as the central processing unit (CPU) and memory, and provides connectors for other peripherals.
           </p>
         </div>
