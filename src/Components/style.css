@@ -65,7 +65,7 @@
 
 .horizontal-rule {
   border-top: 1px solid #666666;
-  margin-top: 3rem;
+  margin-top: 1vmax;
 }
 
 .block {
@@ -119,9 +119,14 @@
 
 .box {
   position: -webkit-sticky;
+  padding: 5px;
   position: sticky;
   top: 0;
   background: #1e2125;
   z-index: 1;
   border-radius: 5px;
+}
+
+.price {
+  font-size: 1.7em;
 }

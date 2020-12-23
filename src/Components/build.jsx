@@ -207,9 +207,9 @@ class Build extends Component {
       <div className="container full-height" >
         <div>
           <h1 className="head">Build your PC</h1>
-          <div className="box">
-            <p className="buildFont" style={{fontSize: "2vmax"}}>Recommended Wattage : <strong>{this.state.wattage} W </strong></p>
-            <p className="buildFont" style={{fontSize: "2vmax"}}>Price total : Rs <strong>{this.state.price}</strong></p>
+          <div className="box head">
+            <p className="buildFont" style={{fontSize: "40%"}}>Recommended Wattage : <strong>{this.state.wattage} W </strong></p>
+            <p className="buildFont" style={{fontSize: "40%"}}>Price total : Rs <strong>{this.state.price}</strong></p>
           </div>
           <div>
             <form>
@@ -230,11 +230,16 @@ class Build extends Component {
                     <option value="Intel i5-10600k">Intel i5-10600k</option>
                     <option value="Intel i3-10320">Intel i3-10320</option>
                   </select> 
+                  <div className="align-items-center col-12 pt-4">
+                    <h2 className="buildFont price">{this.state.cpuPrice ? ("Rs. " + this.state.cpuPrice) : ''}</h2>
+                  </div>
                 </div> 
                 <div className="col-md-9">
                   <img src={this.state.cpuImg} alt="" style={{maxWidth:  "50%"}}/>
                 </div>
+                
               </div>
+
               <div className="horizontal-rule"></div>
               
               {/* Motherboard */}
@@ -244,15 +249,18 @@ class Build extends Component {
                   <select className="custom-select" name="mb" onChange= {this.onChangeMb}>
                     <option hidden value="">Select Motherboard</option>
                     {lookup[this.state.chipset].map( m => <option value={m.id}>{m.text}</option>)}
-                  </select> 
+                  </select>
+                  <div className="align-items-center col-12 pt-4">
+                    <h2 className="buildFont price">{this.state.mbPrice ? ("Rs. " + this.state.mbPrice) : ''}</h2>
+                  </div> 
                 </div>
                 <div className="col-md-9" style={{overflow: "hidden"}}>
                   <img src={this.state.mbImg} alt="" style={{maxWidth:  "100%"}}/>
                 </div>
               </div>
-             <div className="horizontal-rule"></div>
-
-             {/* GPU */}
+              
+              {/* GPU */}
+             <div className="horizontal-rule"></div>     
              <div className="row  align-items-center pt-4">
                 <div className="col-md-3">
                   <label className="buildFont">GPU</label>
@@ -267,11 +275,14 @@ class Build extends Component {
                     <option value="AMD Radeon RX 6800">AMD Radeon RX 6800</option>
                     <option value="AMD Radeon RX 5700XT">AMD Radeon RX 5700XT</option>
                   </select> 
+                  <div className="align-items-center col-12 pt-4">
+                  <h2 className="buildFont price">{this.state.gpuPrice ? ("Rs. " + this.state.gpuPrice) : ''}</h2>
+                </div>
                 </div>
                 <div className="col-md-9" >
                   <img src={this.state.gpuImg} alt="" style={{maxWidth:"100%"}}/>
                 </div>
-             </div>
+              </div>
              <div className="horizontal-rule"></div>
 
              {/* Ram */}
@@ -284,7 +295,10 @@ class Build extends Component {
                     <option value="32">32 gb</option>
                     <option value="16">16 gb</option>
                     <option value="8">8 gb</option>
-                  </select> 
+                  </select>
+                  <div className="align-items-center col-12 pt-4">
+                    <h2 className="buildFont price">{this.state.ramPrice ? ("Rs. " + this.state.ramPrice) : ''}</h2>
+                  </div> 
                 </div> 
                 <div className="offset-md-1 col-md-3">
                   <label className="buildFont">Number of Sticks</label>
@@ -318,6 +332,7 @@ class Build extends Component {
                 <div className="col-md-3">
                   <img src={this.state.ramImg} alt="" style={{maxWidth: "100%"}}/>
                 </div>
+                
               </div>
               <div className="horizontal-rule"></div>
               
@@ -330,7 +345,10 @@ class Build extends Component {
                     <option value="4">4 TB</option>
                     <option value="2">2 TB</option>
                     <option value="1">1 TB</option>
-                  </select> 
+                  </select>                   
+                  <div className="align-items-center col-12 pt-4">
+                    <h2 className="buildFont price">{this.state.stoPrice ? ("Rs. " + this.state.stoPrice) : ''}</h2>
+                  </div>
                 </div> 
                 <div className="offset-md-1 col-md-4">
                   <label className="buildFont">Type of Storage</label>
@@ -371,18 +389,22 @@ class Build extends Component {
                     <option value="750 W">750 W</option>
                     <option value="600 W">600 W</option>
                     <option value="450 W">450 W</option>
-                  </select> 
+                  </select>
+                  <div className="align-items-center col-12 pt-4">
+                    <h2 className="buildFont price">{this.state.psuPrice ? ("Rs. " + this.state.psuPrice) : ''}</h2>
+                  </div> 
                 </div>
                 <div className="col-md-9">
                   <img src={this.state.psuImg} alt="" style={{maxWidth:  "100%"}}/>
                 </div> 
+                
               </div> 
 
               <div style={{padding: "25px"}}></div>
 
               {/* final price  */}
               <div style={{padding: "20px", border: "1px solid #dbdbdb", borderRadius: "10px"}}>
-                <p style={{fontSize: "2vmax", color:"#dbdbdb", fontFamily:"consolas"}}><strong>Final Price : Rs {this.state.price}</strong></p>
+                <p style={{fontSize: "5vmin", color:"#dbdbdb", fontFamily:"consolas"}}><strong>Final Price : Rs {this.state.price}</strong></p>
               </div>
 
               <div style={{padding: "20px"}}></div>
