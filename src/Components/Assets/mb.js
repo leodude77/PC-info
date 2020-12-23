@@ -21,7 +21,7 @@ const mb = [
     name: "Z490",
     img:
       "https://www.gigabyte.com/Image/c9f58be8675b10d7e35c1f48bae951e7/Product/24944/png/500",
-    price: "9000",
+    price: "90000",
   },
   {
     name: "H470",
