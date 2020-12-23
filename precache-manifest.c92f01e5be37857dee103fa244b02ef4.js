@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f3c0442e116095f53be4640a4aab8f59",
+    "revision": "5039a1371a72da9c7afdbd8c03406273",
     "url": "/PC-info/index.html"
   },
   {
-    "revision": "809254983c544784f042",
+    "revision": "e354b9fe11383a674a81",
     "url": "/PC-info/static/css/2.d9ad5f5c.chunk.css"
   },
   {
-    "revision": "2f5debdcd91a5df62807",
+    "revision": "257973cf2ac8168507a6",
     "url": "/PC-info/static/css/main.3ca3331d.chunk.css"
   },
   {
-    "revision": "809254983c544784f042",
-    "url": "/PC-info/static/js/2.2a0211a0.chunk.js"
+    "revision": "e354b9fe11383a674a81",
+    "url": "/PC-info/static/js/2.02c7606d.chunk.js"
   },
   {
     "revision": "d2966845b94a3318bf32eecc7af8015d",
-    "url": "/PC-info/static/js/2.2a0211a0.chunk.js.LICENSE.txt"
+    "url": "/PC-info/static/js/2.02c7606d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2f5debdcd91a5df62807",
-    "url": "/PC-info/static/js/main.8cd7102d.chunk.js"
+    "revision": "257973cf2ac8168507a6",
+    "url": "/PC-info/static/js/main.cecaab03.chunk.js"
   },
   {
     "revision": "ba4a08a592f422a5218d",
