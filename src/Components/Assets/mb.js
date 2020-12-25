@@ -1,40 +1,5 @@
 const mb = [
   {
-    name: "B550",
-    boards: [
-      {
-        name: "ASRock B550M STEEL LEGEND",
-        imgLink:
-          "https://www.asrock.com/mb/photo/B550M%20Steel%20Legend(L2).png",
-        price: "130",
-      },
-      {
-        name: "MSI PRO B550-A PRO",
-        imgLink:
-          "https://asset.msi.com/resize/image/global/product/product_3_20200520134636_5ec4c43cd4e36.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
-        price: "140",
-      },
-      {
-        name: "GIGABYTE B550 AORUS ELITE",
-        imgLink:
-          "https://static.gigabyte.com/StaticFile/Image/Global/79c0ab44476e2cee33449009b15b1a86/Product/25234/png/500",
-        price: "170",
-      },
-      {
-        name: "MSI MAG B550 TOMAHAWK",
-        imgLink:
-          "https://asset.msi.com/resize/image/global/product/product_7_20200520165812_5ec4f124dcab7.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
-        price: "180",
-      },
-      {
-        name: "ASUS ROG Strix B550-E",
-        imgLink:
-          "https://www.amd.com/system/files/2020-05/513262-asus-ROG-STRIX-b550-E-gaming-motherboard-709x709.png",
-        price: "278",
-      },
-    ],
-  },
-  {
     name: "X570",
     boards: [
       {
@@ -64,8 +29,43 @@ const mb = [
       {
         name: "MSI MEG X570 GODLIKE",
         imgLink:
-          "https://storage-asset.msi.com/global/picture/features/MB/Gaming/X570/MEGX570Godlike/x570-godlike-story.png",
+          "https://asset.msi.com/resize/image/global/product/product_9_20190723093040_5d36634076704.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
         price: "1100",
+      },
+    ],
+  },
+  {
+    name: "B550",
+    boards: [
+      {
+        name: "ASRock B550M STEEL LEGEND",
+        imgLink:
+          "https://www.asrock.com/mb/photo/B550M%20Steel%20Legend(L2).png",
+        price: "130",
+      },
+      {
+        name: "MSI PRO B550-A PRO",
+        imgLink:
+          "https://asset.msi.com/resize/image/global/product/product_1_20200520134631_5ec4c43790e3b.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
+        price: "140",
+      },
+      {
+        name: "GIGABYTE B550 AORUS ELITE",
+        imgLink:
+          "https://static.gigabyte.com/StaticFile/Image/Global/79c0ab44476e2cee33449009b15b1a86/Product/25234/png/500",
+        price: "170",
+      },
+      {
+        name: "MSI MAG B550 TOMAHAWK",
+        imgLink:
+          "https://asset.msi.com/resize/image/global/product/product_7_20200520165812_5ec4f124dcab7.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
+        price: "180",
+      },
+      {
+        name: "ASUS ROG Strix B550-E",
+        imgLink:
+          "https://www.amd.com/system/files/2020-05/513262-asus-ROG-STRIX-b550-E-gaming-motherboard-709x709.png",
+        price: "278",
       },
     ],
   },
@@ -175,7 +175,7 @@ const mb = [
       {
         name: "MSI MAG B460M BAZOOKA",
         imgLink:
-          "https://asset.msi.com/resize/image/global/product/product_1_20200715151530_5f0ead12787ca.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
+          "https://asset.msi.com/resize/image/global/product/product_9_20200715151524_5f0ead0cd8442.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
         price: "95",
       },
       {

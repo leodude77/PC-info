@@ -9,7 +9,7 @@ class Home extends Component {
         <div className="horizontal-rule"></div>
         <div className="buildFont pt-4">
           <p className="para">
-            Personal project. Help people learn about pc components and the ability to create your own build.
+            Personal project. Help people learn about pc components and the ability to create a build.
           </p>
         </div>
       </div>

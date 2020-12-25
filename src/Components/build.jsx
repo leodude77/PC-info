@@ -13,7 +13,6 @@ class Build extends Component {
       mb: '',
       mbImg: '',
       mbOption: '',
-      mbIndex: 0,
       gpuName: '',
       gpuImg: '',
       gpuWattage: '000 W',
@@ -45,28 +44,13 @@ class Build extends Component {
   }
 
   //display Motherboard
-  dispMb = () => {
-    // for(var i=0; i<this.props.MB.length; i++){
-    //   if(this.state.mb === this.props.MB[i].name){
-    //     break;
-    //   }
-    // }
-    // this.setState({
-    //   mbImg : this.props.MB[i].img,
-    //   mbPrice : this.props.MB[i].price
-    // }, () => {this.totalPrice();})
-
-    //console.log(this.props.MB[i].boards[j].name);  
+  dispMb = () => { 
     var actualMbPrice, actualMbImg;
-    for (var j = 0; j < this.props.MB.length; j++) {
-      if (this.props.MB[j].name === this.state.mb)
-        break;
-    }
 
-    for (var i = 0; i < this.props.MB[j].boards.length; i++) {
-      if (this.props.MB[j].boards[i].name === this.state.mbOption) {
-        actualMbPrice = this.props.MB[j].boards[i].price;
-        actualMbImg = this.props.MB[j].boards[i].imgLink;
+    for (var i = 0; i < this.props.MB[parseInt(this.state.mb)-1].boards.length; i++) {
+      if (this.props.MB[parseInt(this.state.mb)-1].boards[i].name === this.state.mbOption) {
+        actualMbPrice = this.props.MB[parseInt(this.state.mb)-1].boards[i].price;
+        actualMbImg = this.props.MB[parseInt(this.state.mb)-1].boards[i].imgLink;
         break;
       }
     }
@@ -94,15 +78,17 @@ class Build extends Component {
 
   //display gpu
   dispGpu = () => {
-    for (var i = 0; i < this.props.GPUS.length; i++) {
-      if (this.state.gpuName === this.props.GPUS[i].name) {
+    for (var i = 0; i < this.props.GPUS[parseInt(this.state.gpuName)-1].aibs.length; i++) {
+      if (this.state.gpuOption === this.props.GPUS[parseInt(this.state.gpuName)-1].aibs[i].name) {
         break;
       }
     }
+    let price = this.props.GPUS[parseInt(this.state.gpuName)-1].aibs[i].price;
+    price = parseInt(price) * 70 - ((parseInt(price) * 70) % 50)
     this.setState({
-      gpuImg: this.props.GPUS[i].img,
-      gpuPrice: this.props.GPUS[i].price,
-      gpuWattage: this.props.GPUS[i].watt
+      gpuImg: this.props.GPUS[parseInt(this.state.gpuName)-1].aibs[i].imgLink,
+      gpuPrice: price,
+      gpuWattage: this.props.GPUS[parseInt(this.state.gpuName)-1].watt
     }, () => { this.calWatt(); })
   }
 
@@ -149,15 +135,19 @@ class Build extends Component {
     }, () => { this.totalPrice(); })
   }
 
+  displayAllGpuOptions = () => {
+    return (<select className="custom-select" name="gpuOption" onChange={this.onChangeGpuOptions} value={this.state.gpuOption}>
+      <option hidden value="">Select After market Video Card</option>
+      {this.props.GPUS[parseInt(this.state.gpuName)-1].aibs.map(m => { return (<option value={m.name}>{m.name}</option>) })}
+    </select>);
+  }
+
   displayAllMbOptions = () => {
-    for (var j = 0; j < this.props.MB.length; j++) {
-      if (this.props.MB[j].name === this.state.mb)
-        break;
-    }
+    
 
     return (<select className="custom-select" name="mbOption" onChange={this.onChangeMbOptions} value={this.state.mbOption}>
       <option hidden value="">Select After market Motherboard</option>
-      {this.props.MB[j].boards.map(m => { return (<option value={m.name}>{m.name}</option>) })}
+      {this.props.MB[parseInt(this.state.mb)-1].boards.map(m => { return (<option value={m.name}>{m.name}</option>) })}
     </select>);
   }
 
@@ -189,8 +179,9 @@ class Build extends Component {
     this.setState({
       [e.target.name]: e.target.value,
       mbImg: '',
-      mbPrice: 0
-    })
+      mbPrice: 0,
+      mbOption : ''
+    }, () => {this.totalPrice();})
   }
 
   onChangeMbOptions = (e) => {
@@ -199,10 +190,19 @@ class Build extends Component {
     }, () => { this.dispMb(); })
   }
 
+  onChangeGpuOptions = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    }, () => { this.dispGpu(); })
+  }
+
   onChangeGpu = (e) => {
     this.setState({
-      [e.target.name]: e.target.value
-    }, () => { this.dispGpu(); })
+      [e.target.name]: e.target.value,
+      gpuImg: '',
+      gpuPrice: 0,
+      gpuWattage : "000"
+    }, () => {this.calWatt();})
   }
 
 
@@ -227,20 +227,20 @@ class Build extends Component {
   render() {
     //display mb options based on cpu selected
     const lookup = {
-      "both": [{ id: 'X570', text: 'X570' },
-      { id: 'B550', text: 'B550' },
-      { id: 'A520', text: 'A520' },
-      { id: 'Z490', text: 'Z490' },
-      { id: 'H470', text: 'H470' },
-      { id: 'B460', text: 'B460' },
+      "both": [{ id: '1', text: 'X570' },
+      { id: '2', text: 'B550' },
+      { id: '3', text: 'A520' },
+      { id: '4', text: 'Z490' },
+      { id: '5', text: 'H470' },
+      { id: '6', text: 'B460' },
       ],
-      "amd": [{ id: 'X570', text: 'X570' },
-      { id: 'B550', text: 'B550' },
-      { id: 'A520', text: 'A520' },
+      "amd": [{ id: '1', text: 'X570' },
+      { id: '2', text: 'B550' },
+      { id: '3', text: 'A520' },
       ],
-      "intel": [{ id: 'Z490', text: 'Z490' },
-      { id: 'H470', text: 'H470' },
-      { id: 'B460', text: 'B460' },]
+      "intel": [{ id: '4', text: 'Z490' },
+      { id: '5', text: 'H470' },
+      { id: '6', text: 'B460' },]
     }
 
     return (
@@ -307,15 +307,16 @@ class Build extends Component {
                   <label className="buildFont">GPU</label>
                   <select className="custom-select" name="gpuName" onChange={this.onChangeGpu}>
                     <option hidden value="">Select GPU</option>
-                    <option value="NVIDIA RTX 3090">NVIDIA RTX 3090</option>
-                    <option value="NVIDIA RTX 3080">NVIDIA RTX 3080</option>
-                    <option value="NVIDIA RTX 3070">NVIDIA RTX 3070</option>
-                    <option value="NVIDIA RTX 3060 Ti">NVIDIA RTX 3060 Ti</option>
-                    <option value="AMD Radeon RX 6900XT">AMD Radeon RX 6900XT</option>
-                    <option value="AMD Radeon RX 6800XT">AMD Radeon RX 6800XT</option>
-                    <option value="AMD Radeon RX 6800">AMD Radeon RX 6800</option>
-                    <option value="AMD Radeon RX 5700XT">AMD Radeon RX 5700XT</option>
+                    <option value="1">NVIDIA RTX 3090</option>
+                    <option value="2">NVIDIA RTX 3080</option>
+                    <option value="3">NVIDIA RTX 3070</option>
+                    <option value="4">NVIDIA RTX 3060 Ti</option>
+                    <option value="5">AMD Radeon RX 6900XT</option>
+                    <option value="6">AMD Radeon RX 6800XT</option>
+                    <option value="7">AMD Radeon RX 6800</option>
+                    <option value="8">AMD Radeon RX 5700XT</option>
                   </select>
+                  <div className="pt-4">{this.state.gpuName ? this.displayAllGpuOptions() : ''}</div>
                   <div className="align-items-center col-12 pt-4">
                     <h2 className="buildFont price">{this.state.gpuPrice ? ("Rs. " + this.state.gpuPrice) : ''}</h2>
                   </div>
