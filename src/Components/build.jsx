@@ -201,7 +201,8 @@ class Build extends Component {
       [e.target.name]: e.target.value,
       gpuImg: '',
       gpuPrice: 0,
-      gpuWattage : "000"
+      gpuWattage : "000",
+      gpuOption: ''
     }, () => {this.calWatt();})
   }
 
