@@ -41,16 +41,28 @@ class Ram extends Component {
           </div>
         </div>
         <div className="horizontal-rule"></div>
-        <h1 className="head">
-          <b>Details on Double Data Rate 4 RAM</b>
-        </h1>
-
+        <div class="guide">
+          <h3>Size</h3>
+          <p>You should get enough RAM to suit your needs. Getting more RAM does not improve performance, unless the program you're using actually needs more. Currently, to use more than the recommended 8GB-16GB, you have to have a lot of programs and browser tabs open, be editing video or large audio or image files, or be using some other specialized data processing app.</p>
+          <p>8GB-16GB is considered fairly standard these days, and is generally the amount recommended. 32GB or more is currently only useful for people operating on a ton of data— video editing, 3D Design work, multiple VMs, etc.</p>
+          <h3>Brands</h3>
+          <p>Corsair, G.Skill, and Kingston have a well-known reputation for quality control. Crucial, GeIL, and Mushkin are also good. Getting RAM from another manufacturer is fine as well, but you should read reviews before buying the absolute cheapest no-name brand. All of the actual RAM chips are made by a small handful of&nbsp;companies:&nbsp; Samsung, Kioxia (Toshiba), WD, Micron, SK Hynix, or Intel.</p>
+          <h3>Speeds</h3>
+          <p>All modern platforms use&nbsp;<b>DDR4</b>&nbsp;RAM (as of late 2020).</p>
+          <p><b>DDR4 RAM</b>&nbsp;is the latest available standard. DDR4 speeds are 2133MHz, 2400MHz, 2666MHz, 2800MHz, 2933MHz, and 3200MHz. Some RAM kits are rated as even faster, but support for non-official speeds depends on your motherboard. As of now, DDR4 is supported by all of the current-generation AMD and Intel CPUs. Make absolutely sure to buy RAM that is compatible with your motherboard/CPU.</p>
+          <p>When you’re shopping for RAM, get the fastest speed that you can, as long as the price difference is reasonable. Each small increase in RAM&nbsp;speed&nbsp;makes a similar (small) increase in performance. It adds up, with 3200MHz -&nbsp;3600MHz usually being the "sweet spot" for performance vs price, so that might be worth it if your budget is flexible. For a lot of everyday tasks, RAM speed will not make that big a difference.</p>
+          <p>The one exception to this is APUs, such as AMD's G-series APUs, which combine the CPU and GPU into one chip. Having more bandwidth and lower latency becomes useful in that case, because the built-in GPU uses your main memory. If you can find faster RAM for a small price increase, it is worth getting if you are using an APU.</p>
+        </div>
+        <div className="horizontal-rule"></div>
+          <h1 className="head">
+            <b>Details on Double Data Rate 4 RAM</b>
+          </h1>
         <table class="table table-striped table-dark table-bordered  "
                   style={{ textAlign: "center", maxWidth: "100%" }}>
 
         <tbody style={{ maxWidth: "100%" }}>
         <tr>
-        <th scope="col" style={{
+        <th  style={{
                               fontFamily: "Century Gothic",
                               fontSize: "1.7em",
                               textDecoration: "none",
@@ -140,6 +152,7 @@ class Ram extends Component {
         <td>20-20-20<br />22-22-22<br />24-24-24</td>
         <td>12.5 <br />13.75 <br />15
         </td></tr></tbody></table>
+        <div style={{padding:"10px"}}></div>
       </div>
     );
   }

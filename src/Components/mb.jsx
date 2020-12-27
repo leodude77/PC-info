@@ -19,6 +19,30 @@ class Mb extends Component {
           </p>
         </div>
         <div className="horizontal-rule"></div>
+        <div class="guide">
+          <h3>Compatibility</h3>
+          <p>Because motherboards connect all of your components together, the process for choosing your motherboard comes with a number of compatibility considerations:</p>
+          <ul>
+              <li><b>Socket:</b>&nbsp;Your motherboard socket needs to match your CPU socket (1151, AM4, etc).</li>
+              <li><b>Size:</b>&nbsp;The motherboard needs to fit in your case. Normal sizes, from small to large, are mini ITX, micro ATX (µATX, uATX, or mATX), ATX, and Extended ATX (E-ATX). A smaller motherboard will fit in a larger case, but not vice-versa.</li>
+              <li><b>RAM:</b>&nbsp;Each motherboard (and CPU) will only be compatible with certain types of RAM. Most modern motherboard options are only compatible with DDR4 RAM.</li>
+              <li><b>GPU:</b>&nbsp;Your graphics card needs the correct slot on the motherboard. For graphics cards released in the last 10 years, this is PCIe.</li>
+              <li><b>PCI components:</b>&nbsp;If you have an old regular PCI card that you want to use, such as a sound card, check to see if your motherboard has any regular PCI slots. Many modern motherboards have only the newer PCIe slots.</li>
+          </ul>
+          <h3>Brands</h3>
+          <p><strong>Asus</strong> and <strong>MSI </strong>make excellent motherboards. <strong>Gigabyte</strong> and <strong>ASRock</strong> are also good.</p>
+          <h3>Needs</h3>
+          <p>Carefully weigh your needs and get a motherboard that matches them. Get a motherboard that has the slots and ports that you need for your storage and cards. If you intend to overclock, get a motherboard that supports overclocking.</p>
+          <h3>Alternatives</h3>
+          <p>There are a huge number of motherboard models available from many manufacturers, and thus there are plenty of good alternatives for each tier that cannot be included on the Logical Increments parts list due to space constraints.</p>
+          <h3>Overclocking</h3>
+          <p>Overclock only if your motherboard supports it. Low-tier mobos were not designed to overclock and have less robust power systems, so get a mid-range or high-end mobo and do your research before overclocking.</p>
+          <h3>Power (VRMs, Phases)</h3>
+          <p>The quality of a motherboard’s power features is a large part of what set an expensive motherboard apart from a cheap one. Quality motherboards usually possess more or better power phases (more isn't automatically better), solid capacitors, ferrite chokes, and MOSFET heatsinks are usually present in good-quality mobos. High-end motherboards may even have DrMos and tantalum capacitors.</p>
+          <p>You can determine the number of phases by counting the number of chokes. Higher is usually better, but going overboard (32 phases) does not help much.</p>
+          <p>Low-quality voltage regulator modules (VRMs) are typically the first thing to fry, especially if you’re overclocking. Getting something good will ensure lower temps, stable/clean power for your CPU, and a reliable, long-lasting motherboard.</p>
+        </div>
+        <div className="horizontal-rule"></div>
         <h1 className="head">
           <b>Latest Generation of Chipsets</b>
         </h1>
@@ -97,7 +121,7 @@ class Mb extends Component {
                     </tr>
                     <tr>
                       <th>
-                        <a href="/wiki/Overclocking" title="Overclocking">
+                        <a href="https://en.wikipedia.org/wiki/Overclocking" title="Overclocking">
                           Overclocking
                         </a>
                       </th>
@@ -131,7 +155,7 @@ class Mb extends Component {
                     <tr>
                       <th>
                         Maximum{" "}
-                        <a href="/wiki/DIMM" title="DIMM">
+                        <a href="https://en.wikipedia.org/wiki/DIMM" title="DIMM">
                           DIMM
                         </a>{" "}
                         slots
@@ -148,7 +172,7 @@ class Mb extends Component {
                     </tr>
                     <tr>
                       <th>
-                        <a href="/wiki/SATA" class="mw-redirect" title="SATA">
+                        <a href="https://en.wikipedia.org/wiki/Serial_ATA" class="mw-redirect" title="SATA">
                           SATA
                         </a> Ports
                        </th>
@@ -183,7 +207,7 @@ class Mb extends Component {
                       <th>
                         Chipset{" "}
                         <a
-                          href="/wiki/Thermal_design_power"
+                          href="https://en.wikipedia.org/wiki/Thermal_design_power"
                           title="Thermal design power"
                         >
                           TDP
@@ -265,7 +289,7 @@ class Mb extends Component {
                     </tr>
                     <tr>
                       <th>
-                        <a href="/wiki/Overclocking" title="Overclocking">
+                        <a href="https://en.wikipedia.org/wiki/Overclocking" title="Overclocking">
                           Overclocking
                         </a>
                       </th>
@@ -288,10 +312,11 @@ class Mb extends Component {
                       <th>CPU support</th>
                       <td colspan="3">
                         <a
-                          href="/wiki/Comet_Lake#Desktop_processors"
+                          href="https://en.wikipedia.org/wiki/Comet_Lake_(microprocessor)"
                           class="mw-redirect"
                           title="Comet Lake"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           Comet Lake S
                         </a>{" "}
@@ -308,7 +333,7 @@ class Mb extends Component {
                     <tr>
                       <th>
                         Maximum{" "}
-                        <a href="/wiki/DIMM" title="DIMM">
+                        <a href="https://en.wikipedia.org/wiki/DIMM" title="DIMM">
                           DIMM
                         </a>{" "}
                         slots
@@ -336,7 +361,7 @@ class Mb extends Component {
                     <tr>
                       <th>
                         Maximum{" "}
-                        <a href="/wiki/SATA" class="mw-redirect" title="SATA">
+                        <a href="https://en.wikipedia.org/wiki/Serial_ATA" class="mw-redirect" title="SATA">
                           SATA
                         </a>{" "}
                         3.0 ports
@@ -348,7 +373,7 @@ class Mb extends Component {
                       <th>
                         Processor{" "}
                         <a
-                          href="/wiki/PCI_Express#PCI_Express_3.0"
+                          href="https://en.wikipedia.org/wiki/PCI_Express"
                           title="PCI Express"
                         >
                           PCI Express
@@ -361,7 +386,7 @@ class Mb extends Component {
                     <tr>
                       <th>
                         <a
-                          href="/wiki/Platform_Controller_Hub"
+                          href="https://en.wikipedia.org/wiki/Platform_Controller_Hub"
                           title="Platform Controller Hub"
                         >
                           PCH
@@ -381,7 +406,7 @@ class Mb extends Component {
                     <tr>
                       <th>
                         Integrated Wireless (
-                        <a href="/wiki/IEEE_802.11ax" title="IEEE 802.11ax">
+                        <a href="https://en.wikipedia.org/wiki/IEEE_802.11ax" title="IEEE 802.11ax">
                           802.11ax
                         </a>
                         )
@@ -404,7 +429,7 @@ class Mb extends Component {
                     <tr>
                       <th>
                         SATA{" "}
-                        <a href="/wiki/RAID" title="RAID">
+                        <a href="https://en.wikipedia.org/wiki/RAID" title="RAID">
                           RAID
                         </a>{" "}
                         0/1/5/10 support
@@ -421,7 +446,7 @@ class Mb extends Component {
                     </tr>
                     <tr>
                       <th>
-                        <a href="/wiki/3D_XPoint" title="3D XPoint">
+                        <a href="https://en.wikipedia.org/wiki/3D_XPoint" title="3D XPoint">
                           Intel Optane Memory
                         </a>{" "}
                         Support
@@ -443,20 +468,20 @@ class Mb extends Component {
                       <th>
                         Intel{" "}
                         <a
-                          href="/wiki/Intel_Active_Management_Technology"
+                          href="https://en.wikipedia.org/wiki/Intel_Active_Management_Technology"
                           title="Intel Active Management Technology"
                         >
                           Active Management
                         </a>
                         ,{" "}
                         <a
-                          href="/wiki/Trusted_Execution_Technology"
+                          href="https://en.wikipedia.org/wiki/Trusted_Execution_Technology"
                           title="Trusted Execution Technology"
                         >
                           Trusted Execution
                         </a>{" "}
                         and{" "}
-                        <a href="/wiki/Intel_vPro" title="Intel vPro">
+                        <a href="https://en.wikipedia.org/wiki/Intel_vPro" title="Intel vPro">
                           vPro
                         </a>{" "}
                         Technology
@@ -473,7 +498,7 @@ class Mb extends Component {
                       <th>
                         Chipset{" "}
                         <a
-                          href="/wiki/Thermal_design_power"
+                          href="https://en.wikipedia.org/wiki/Thermal_design_power"
                           title="Thermal design power"
                         >
                           TDP
