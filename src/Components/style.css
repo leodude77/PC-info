@@ -1,3 +1,8 @@
+.html {
+  padding: 0;
+  margin: 0;
+}
+
 .nav {
   background-color: #1e2125;
 }
@@ -144,4 +149,47 @@
   padding: 20px;
   text-align: left;
   margin-top: 20px;
+}
+
+.footer-container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  color: red;
+}
+
+.footer-container {
+  padding: 20px;
+  background-color: #1e2125;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.linkStyle {
+  color: rgb(4, 175, 152);
+}
+
+.linkStyle:hover {
+  text-decoration: none;
+  color: rgba(4, 175, 152, 0.671);
+}
+
+.footer-items {
+  text-align: left;
+}
+
+.footer-items p {
+  cursor: default;
+}
+
+@media only screen and (max-width: 767px) {
+  .footer-container {
+    flex-direction: column;
+  }
+  .footer-items {
+    padding: 10px;
+  }
 }
