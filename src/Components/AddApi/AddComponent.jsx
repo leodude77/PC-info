@@ -66,6 +66,7 @@ function AddComponent() {
   return (
     <div className="addComponent">
       <h2>Select the component to add</h2>
+      <select>{selectOptions}</select>
 
       <form method="post" onSubmit={(e) => handleSubmit(e)}>
         <div className="formInput">

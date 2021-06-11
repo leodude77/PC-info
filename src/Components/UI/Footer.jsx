@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = (props) => {
   return (
-    <div className="footer-container">
+    <footer className="footer-container">
       <div className="footer-items">
         <p
           style={{
@@ -83,7 +83,7 @@ const Footer = (props) => {
           </li>
         </ul>
       </div>
-    </div>
+    </footer>
   );
 };
 

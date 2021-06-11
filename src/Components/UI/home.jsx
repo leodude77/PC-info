@@ -14,10 +14,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div
-        className="container p-4"
-        style={{ color: "white", height: "100vh" }}
-      >
+      <div className="container p-4" style={{ color: "white" }}>
         <h1 className="head">About this website</h1>
         <div className="horizontal-rule"></div>
         <div className="buildFont pt-4">
