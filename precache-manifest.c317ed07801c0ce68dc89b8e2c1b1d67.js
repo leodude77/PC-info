@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "884c24222e775a1d6dfb9f46668ea1b3",
+    "revision": "9bbaae712166d2bb239ca5fa9b902c10",
     "url": "/PC-info/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/PC-info/static/css/2.d9ad5f5c.chunk.css"
   },
   {
-    "revision": "c15d6df9fb04ba08b72f",
+    "revision": "4b555b9faa1adc6440aa",
     "url": "/PC-info/static/css/main.2c38cb9f.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/PC-info/static/js/2.68e15ac6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c15d6df9fb04ba08b72f",
-    "url": "/PC-info/static/js/main.b108326c.chunk.js"
+    "revision": "4b555b9faa1adc6440aa",
+    "url": "/PC-info/static/js/main.11e53bbb.chunk.js"
   },
   {
     "revision": "ba4a08a592f422a5218d",
