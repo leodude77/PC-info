@@ -1,6 +1,3 @@
-# Personal Pepega Project. (Spagetti code)
-
-<br>
  https://leodude77.github.io/PC-info/
 
 -> Possibly fixed the reload issue on specific routes
@@ -21,11 +18,11 @@ Notes -\
 Bugs -\
 -> Motherboard and ram component tables still broken on phone\
 -> Verify chipset has issues if cpu is already selected and then changed\
--> Selected index remains same after cpu change
+-> Selected index remains same after cpu change\
 -> Table links refer on same page(needs to be updated)
 
-### v.0 :
-<br>
+### v.0.0 :
+
 Bugs -
 <br>
 -> Whitespace at bottom of ram page
