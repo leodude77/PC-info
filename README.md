@@ -5,7 +5,7 @@
 
 -> Possibly fixed the reload issue on specific routes
 
-### Version Alpha v.0.1 :
+### v.0.1 :
 
 Notes -\
 -> Revamped build component to only access virtual dom\
@@ -24,8 +24,7 @@ Bugs -\
 -> Selected index remains same after cpu change
 -> Table links refer on same page(needs to be updated)
 
-### Version Alpha v.0 :
-
+### v.0 :
 <br>
 Bugs -
 <br>
