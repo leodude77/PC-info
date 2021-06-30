@@ -1,14 +1,16 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
-import { HashRouter } from "react-router-dom";
+import { HashRouter} from "react-router-dom";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Main from "./Components/UI/Main";
+import {Spinner} from "react-bootstrap";
 
 var cpu, gpu, mb;
 
-class App extends Component {
-  state = { isLoading: true };
+const App = () =>{
+  const [isLoading,setisLoading] = useState(true);
 
-  componentDidMount() {
+  useEffect(()=>{
     Promise.all([
       fetch("https://aot-time.herokuapp.com/getDetails"),
       fetch("https://pc-info-api.herokuapp.com/"),
@@ -24,12 +26,11 @@ class App extends Component {
         cpu = data2;
       })
       .then(() => {
-        this.setState({ isLoading: false });
+        setisLoading(false);
       })
       .catch((e) => console.log(e));
-  }
-  render() {
-    if (this.state.isLoading) return <div>Loading please wait....</div>;
+  }) 
+    if (isLoading) return <div className="spinnerContainer"><Spinner animation="border" /></div>;
     else {
       return (
         <div className="App" style={{ backgroundColor: "#121212" }}>
@@ -39,6 +40,6 @@ class App extends Component {
         </div>
       );
     }
-  }
 }
+
 export default App;

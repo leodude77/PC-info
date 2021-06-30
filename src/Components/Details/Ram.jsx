@@ -1,13 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import "../style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useEffect } from "react";
 
-class Ram extends Component {
-  componentDidMount() {
+const Ram = () => {
+  useEffect(()=>{
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }
+  }) 
 
-  render() {
+  
     return (
       <div className="Cpu container mt-2">
         <div>
@@ -372,7 +373,7 @@ class Ram extends Component {
         <div style={{ padding: "10px" }}></div>
       </div>
     );
-  }
+  
 }
 
 export default Ram;

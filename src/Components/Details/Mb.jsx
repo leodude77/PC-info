@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
+import { useEffect } from "react";
 import { Tab, Nav } from "react-bootstrap";
 
-class Mb extends Component {
-  componentDidMount() {
+const Mb = () => {
+  useEffect(()=>{
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-  render() {
+  }) 
+  
     return (
       <div
         className="container p-4 full-height"
@@ -639,7 +639,7 @@ class Mb extends Component {
         </Tab.Container>
       </div>
     );
-  }
+  
 }
 
 export default Mb;

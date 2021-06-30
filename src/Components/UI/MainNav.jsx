@@ -92,17 +92,6 @@ const MainNav = (props) => {
               </NavLink>
             </NavItem>
             <NavItem>
-              <div
-                className="nav-link"
-                style={{ cursor: "pointer" }}
-                onClick={() =>
-                  window.open("https://github.com/leodude77/PC-info", "_blank")
-                }
-              >
-                GitHub
-              </div>
-            </NavItem>
-            <NavItem>
               <NavLink className="nav-link" to="/addComponent" exact>
                 Add parts
               </NavLink>

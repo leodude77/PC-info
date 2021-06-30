@@ -43,3 +43,11 @@
   background-color: rgb(14, 14, 14) !important;
   color: #dbdbdb !important;
 }
+
+.spinnerContainer {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

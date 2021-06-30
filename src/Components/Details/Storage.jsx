@@ -1,14 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 import "../style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Tab, Nav } from "react-bootstrap";
+import { useEffect } from "react";
 
-class Storage extends Component {
-  componentDidMount() {
+const Storage = () => {
+  useEffect(()=>{
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }
+  }) 
 
-  render() {
+  
     return (
       <div className="Cpu container mt-2">
         <div>
@@ -236,7 +237,7 @@ class Storage extends Component {
         </Tab.Container>
       </div>
     );
-  }
+  
 }
 
 export default Storage;

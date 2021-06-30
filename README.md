@@ -3,6 +3,8 @@
 <br>
  https://leodude77.github.io/PC-info/
 
+-> Possibly fixed the reload issue on specific routes
+
 ### Version Alpha v.0.1 :
 
 Notes -\

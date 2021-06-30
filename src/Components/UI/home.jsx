@@ -1,18 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Home extends Component {
-  state = {
-    title: null,
-  };
-
-  componentDidMount() {
-    fetch("https://pc-info-api.herokuapp.com/")
-      .then((res) => res.json())
-      .then((data) => this.setState({ title: data[1].name }))
-      .catch((e) => console.log(e));
-  }
-
-  render() {
+function Home(){
     return (
       <div className="container p-4" style={{ color: "white" }}>
         <h1 className="head">About this website</h1>
@@ -20,12 +8,11 @@ class Home extends Component {
         <div className="buildFont pt-4">
           <p className="para">
             Personal project. Help people learn about pc components and the
-            ability to create a build. {this.state.title}
+            ability to create a build.
           </p>
         </div>
       </div>
     );
-  }
 }
 
 export default Home;
