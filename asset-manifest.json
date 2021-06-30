@@ -1,26 +1,24 @@
 {
   "files": {
-    "main.css": "/PC-info/static/css/main.2c38cb9f.chunk.css",
-    "main.js": "/PC-info/static/js/main.11e53bbb.chunk.js",
-    "main.js.map": "/PC-info/static/js/main.11e53bbb.chunk.js.map",
-    "runtime-main.js": "/PC-info/static/js/runtime-main.682ef8b7.js",
-    "runtime-main.js.map": "/PC-info/static/js/runtime-main.682ef8b7.js.map",
-    "static/css/2.d9ad5f5c.chunk.css": "/PC-info/static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.68e15ac6.chunk.js": "/PC-info/static/js/2.68e15ac6.chunk.js",
-    "static/js/2.68e15ac6.chunk.js.map": "/PC-info/static/js/2.68e15ac6.chunk.js.map",
+    "main.css": "/PC-info/static/css/main.cb0b38eb.chunk.css",
+    "main.js": "/PC-info/static/js/main.c8eddad5.chunk.js",
+    "main.js.map": "/PC-info/static/js/main.c8eddad5.chunk.js.map",
+    "runtime-main.js": "/PC-info/static/js/runtime-main.c1c9788a.js",
+    "runtime-main.js.map": "/PC-info/static/js/runtime-main.c1c9788a.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/PC-info/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.49c64766.chunk.js": "/PC-info/static/js/2.49c64766.chunk.js",
+    "static/js/2.49c64766.chunk.js.map": "/PC-info/static/js/2.49c64766.chunk.js.map",
     "index.html": "/PC-info/index.html",
-    "precache-manifest.c317ed07801c0ce68dc89b8e2c1b1d67.js": "/PC-info/precache-manifest.c317ed07801c0ce68dc89b8e2c1b1d67.js",
-    "service-worker.js": "/PC-info/service-worker.js",
-    "static/css/2.d9ad5f5c.chunk.css.map": "/PC-info/static/css/2.d9ad5f5c.chunk.css.map",
-    "static/css/main.2c38cb9f.chunk.css.map": "/PC-info/static/css/main.2c38cb9f.chunk.css.map",
-    "static/js/2.68e15ac6.chunk.js.LICENSE.txt": "/PC-info/static/js/2.68e15ac6.chunk.js.LICENSE.txt",
-    "static/media/fan.png": "/PC-info/static/media/fan.03eb9289.png"
+    "static/css/2.4c97ca4f.chunk.css.map": "/PC-info/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.cb0b38eb.chunk.css.map": "/PC-info/static/css/main.cb0b38eb.chunk.css.map",
+    "static/js/2.49c64766.chunk.js.LICENSE.txt": "/PC-info/static/js/2.49c64766.chunk.js.LICENSE.txt",
+    "static/media/fan.42864de3.png": "/PC-info/static/media/fan.42864de3.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.682ef8b7.js",
-    "static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.68e15ac6.chunk.js",
-    "static/css/main.2c38cb9f.chunk.css",
-    "static/js/main.11e53bbb.chunk.js"
+    "static/js/runtime-main.c1c9788a.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.49c64766.chunk.js",
+    "static/css/main.cb0b38eb.chunk.css",
+    "static/js/main.c8eddad5.chunk.js"
   ]
 }
