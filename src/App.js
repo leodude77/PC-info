@@ -13,7 +13,7 @@ const App = () =>{
   useEffect(()=>{
     Promise.all([
       fetch("https://aot-time.herokuapp.com/getDetails"),
-      fetch("https://pc-info-api.herokuapp.com/"),
+      fetch("https://pc-info-add-api.herokuapp.com/"),
     ])
       .then(async ([res1, res2]) => {
         let data1 = await res1.json();
@@ -33,7 +33,7 @@ const App = () =>{
     if (isLoading) return <div className="spinnerContainer"><Spinner animation="border" /></div>;
     else {
       return (
-        <div className="App" style={{ backgroundColor: "#121212" }}>
+        <div className="App" style={{backgroundColor: "#131313" }}>
           <HashRouter>
             <Main cpu={cpu} gpu={gpu} mb={mb} />
           </HashRouter>

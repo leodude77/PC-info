@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "../../style.css";
 import { Tab, Nav} from "react-bootstrap";
 import CpuTextInfo from "./CpuTextInfo";
+import {Paginate} from "../Paginate";
 
 const Cpu = ({cpu}) =>{
   
@@ -9,23 +10,21 @@ const Cpu = ({cpu}) =>{
     window.scrollTo({ top: 0, behavior: "smooth" });
   })
 
-  const displayCpu = (key) => {
-    const cpus = cpu.map((cpu) => {
-      if (cpu.brand === key) {
-        return (
-          <div className="mt-4">
+  var amdCpus=[],intelCpus=[],temp;
+  for(let c=0; c<cpu.length; c++){
+    temp = <div className="mt-4">
             <h1 style={{ margin: "50px" }}>
-              <b>{cpu.name}</b>
+              <b>{cpu[c].name}</b>
             </h1>
             <div
-              className={"row ce  align-items-center cardsize " + key + "cpu"}
+              className={"row ce  align-items-center cardsize " + cpu[c].brand + "cpu"}
               style={{ cursor: "pointer" }}
-              onClick={() => window.open(cpu.prodLink, "_blank")}
+              onClick={() => window.open(cpu[c].prodLink, "_blank")}
             >
               <div className="col-lg-7">
                 <img
                   className="ce"
-                  src={cpu.imgLink}
+                  src={cpu[c].imgLink}
                   style={{ maxWidth: "100%" }}
                   alt="Cpu"
                 />
@@ -35,52 +34,46 @@ const Cpu = ({cpu}) =>{
                 <table className="table " style={{ color: "white" }}>
                   <tr>
                     <td>Number of Cores</td>
-                    <td>{cpu.coreCount}</td>
+                    <td>{cpu[c].coreCount}</td>
                   </tr>
                   <tr>
                     <td>Number of Threads</td>
-                    <td>{cpu.threadCount}</td>
+                    <td>{cpu[c].threadCount}</td>
                   </tr>
                   <tr>
                     <td>Boost Clock Speed</td>
-                    <td>{cpu.boostClock}</td>
+                    <td>{cpu[c].boostClock}</td>
                   </tr>
                   <tr>
                     <td>Base Clock Speed</td>
-                    <td>{cpu.baseClock}</td>
+                    <td>{cpu[c].baseClock}</td>
                   </tr>
                   <tr>
                     <td>TDP</td>
-                    <td>{cpu.tdp}</td>
+                    <td>{cpu[c].tdp}</td>
                   </tr>
                   <tr>
                     <td>Price</td>
-                    <td>Rs {cpu.price}</td>
+                    <td>Rs {cpu[c].price}</td>
                   </tr>
                 </table>
               </div>
             </div>
-
             <div className="horizontal-rule"></div>
           </div>
-        );
-      } else return <div></div>;
-    });
-    return cpus;
+    if(cpu[c].brand === "amd")
+      amdCpus.push(temp);
+    else
+      intelCpus.push(temp);
   }
-
-  const amdCpus = displayCpu("amd");
-  const intelCpus = displayCpu("intel");
 
     return (
       <div className="Cpu container mt-2">
         <CpuTextInfo />
-
         <div className="horizontal-rule"></div>
         <h1 className="head">
           <b>Latest Generation of CPUS</b>
         </h1>
-
         <Tab.Container id="left-tabs-example" defaultActiveKey="first">
           <Nav variant="pills">
             <Nav.Item className="col-sm-6 m-0 p-0">
@@ -93,10 +86,10 @@ const Cpu = ({cpu}) =>{
           </Nav>
 
           <Tab.Content>
-            <Tab.Pane eventKey="first">{amdCpus}</Tab.Pane>
-            <Tab.Pane eventKey="second">{intelCpus}</Tab.Pane>
+            <Tab.Pane eventKey="first"><Paginate items={amdCpus} /></Tab.Pane>
+            <Tab.Pane eventKey="second"><Paginate items={intelCpus} /></Tab.Pane>
           </Tab.Content>
-        </Tab.Container>
+        </Tab.Container> 
         
       </div>
     );

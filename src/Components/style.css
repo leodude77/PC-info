@@ -4,7 +4,7 @@
 }
 
 .nav {
-  background-color: #1e2125;
+  background-color: #191c1f;
 }
 
 .Cpu {
@@ -20,32 +20,23 @@
   min-height: 100vmin;
 }
 
-.bgcolor {
-  background-color: #121212;
-}
-
 .ce {
   border-radius: 1rem;
 }
 
 .cardsize img {
   max-block-size: 13rem;
-  /* display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2em;
-  margin-bottom: 2em; */
 }
 .table {
   margin-top: 40px;
 }
 
-.nv {
+.nvidiagpu {
   background-image: url(https://i.imgur.com/Psv3JXA.jpg);
   background-position: center;
 }
 
-.radeon {
+.amdgpu {
   background-image: url(https://i.imgur.com/6UPcHpZ.jpg);
   background-position: center;
 }
@@ -62,7 +53,7 @@
 
 .head {
   font-family: "Trebuchet MS", "Lucida Grande", sans-serif;
-  font-size: 5rem;
+  font-size: 4rem;
   padding: 20px;
   color: floralwhite;
   max-width: 100%;
@@ -78,29 +69,6 @@
   background: black;
 }
 
-.glow::before,
-.glow::after {
-  content: "";
-  position: absolute;
-  left: -2px;
-  top: -2px;
-  background: linear-gradient(
-    45deg,
-    yellow,
-    red,
-    purple,
-    blue,
-    cyan,
-    green,
-    lime
-  );
-  width: calc(100% + 5px);
-  height: calc(100% + 5px);
-  z-index: 1;
-  animation: animate 20s linear infinite;
-  background-size: 200%;
-}
-
 @keyframes animate {
   0% {
     background-position: 0 0;
@@ -111,10 +79,6 @@
   100% {
     background-position: 0 0;
   }
-}
-
-.glow::after {
-  filter: blur(20px);
 }
 
 .buildFont {
@@ -144,7 +108,7 @@
 }
 
 .guide {
-  background-color: #2b2b2b;
+  background-color: #202020;
   border-radius: 10px;
   padding: 20px;
   text-align: left;
@@ -161,7 +125,7 @@
 
 .footer-container {
   padding: 20px;
-  background-color: #1e2125;
+  background-color: #191c1f;
   color: white;
   display: flex;
   justify-content: space-evenly;
